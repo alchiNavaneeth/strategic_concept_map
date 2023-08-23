@@ -1,0 +1,199 @@
+* {
+  box-sizing: border-box;
+  font-family: "Raleway", sans-serif;
+  height: auto;
+  width: auto;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #f2f2f2;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  box-shadow: 0 0 6px 1px rgba(194, 194, 194, 0.5);
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+header h2 {
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 2rem;
+}
+header ul {
+  display: inline-block;
+  list-style: none;
+}
+header ul li {
+  display: inline-block;
+  margin: 0 0.75rem;
+  font-size: 1.1rem;
+  color: rgba(0, 0, 0, 0.8);
+  font-weight: 500;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  margin: 0.75rem;
+  gap: 2rem;
+}
+.grid-container .map {
+  grid-column: span 7;
+  position: sticky;
+  top: 100px;
+  height: calc(100vh - 6rem);
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+.grid-container .map #circle-container {
+  width: 800px;
+  height: 600px;
+}
+.grid-container .map #circle-container .sc {
+  cursor: pointer;
+  transition: stroke-width 0.3s, transform 0.3s, fill 0.3s;
+  transform-origin: 50% 50%;
+}
+.grid-container .map #circle-container text {
+  cursor: pointer;
+}
+.grid-container .map #circle-container .sc:hover {
+  stroke: #011337;
+  stroke-width: 6;
+  transform: scale(1);
+  fill: #011337;
+}
+.grid-container .map #circle-container .highlight {
+  fill: #011337;
+}
+.grid-container .map #circle-container .highlight-thread {
+  stroke: #011337;
+}
+.grid-container .content {
+  grid-column: 8/13;
+  display: flex;
+  align-items: center;
+}
+.grid-container .content .card {
+  margin: 1.5rem;
+  max-height: 100%;
+  border-radius: 0.5rem;
+  background-color: #fff;
+  box-shadow: 0px 0px 2px 1px rgba(200, 199, 199, 0.5);
+}
+.grid-container .content .card .card-head-content {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url("../assets/IoT.jpg");
+  height: 170px;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  color: white;
+  margin-bottom: 1rem;
+}
+.grid-container .content .card .card-head-content .black-layer {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  border-radius: 0.5rem;
+}
+.grid-container .content .card .card-head-content .black-layer h4 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+.grid-container .content .card .card-head-content .black-layer span {
+  font-size: 1.1rem;
+}
+.grid-container .content .card .card-body-content {
+  padding: 1rem 1.5rem;
+}
+.grid-container .content .card .card-body-content h4 {
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.grid-container .content .card .card-body-content p {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+.grid-container .content .card .card-body-content span {
+  display: inline-block;
+  font-size: 0.8rem;
+  color: #333;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+.grid-container .content .card .card-body-content .icons {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+.grid-container .content .card .card-body-content .icons .icon {
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+  cursor: pointer;
+}
+.grid-container .content .card .card-body-content .icons .icon i {
+  font-size: 1.5rem;
+  color: #777;
+  margin-bottom: 1rem;
+}
+.grid-container .content .card .card-body-content .icons .icon span {
+  color: #888;
+  font-weight: 500;
+}
+
+footer {
+  padding-bottom: 2rem;
+  padding-top: 0.25rem;
+}
+footer h2 {
+  text-align: center;
+  font-size: 1rem;
+  color: #333;
+}
+
+@media screen and (max-width: 1150px) {
+  .grid-container {
+    grid-template-rows: 1fr 1fr;
+    height: auto;
+  }
+  .grid-container .map {
+    grid-row-start: 1;
+    grid-column: span 13;
+    position: static;
+    top: 0;
+    height: auto;
+  }
+  .grid-container .map #circle-container {
+    width: 1200px;
+    height: 600px;
+  }
+  .grid-container .content {
+    grid-row-start: 2;
+    grid-column: span 13;
+  }
+}
+@media screen and (max-width: 950px) {
+  .grid-container .map #circle-container {
+    width: 900px;
+  }
+}

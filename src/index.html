@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strategic Concept Mapping</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+</head>
+
+<body>
+
+    <header>
+        <h2>Strategic Concept Map</h2>
+        <ul>
+            <li>Home</li>
+            <li>Search</li>
+            <li>About</li>
+        </ul>
+    </header>
+
+    <div class="grid-container">
+        <!-- Strategic Map -->
+        <div class="map">
+            <svg id="circle-container">
+                <!-- <defs>
+                    <pattern id="image" x="0%" y="0%" height="100%" width="100%" viewBox="0 0 500 500">
+                        <image x="0%" y="0%" width="512" height="512"
+                            xlink:href="./assets/Zone_of_Pulp.jpg">
+                        </image>
+                    </pattern>
+                </defs> -->
+                <defs>
+                    <clipPath id="circle-clip">
+                        <use xlink:href="#circle" />
+                    </clipPath>
+                </defs>
+                <g clip-path="url(#circle-clip)">
+                    <image xlink:href="./assets/IoT.jpg" width="100%" height="100%"
+                        preserveAspectRatio="xMidYMid slice" />
+                    <use xlink:href="#circle" fill="none" stroke="#0F1C3F" stroke-width="2" opacity="0.25" />
+                </g>
+            </svg>
+
+        </div>
+
+        <!-- Map Content - Card -->
+        <div class="content">
+            <div class="card">
+                <div class="card-head-content">
+                    <div class="black-layer">
+                        <!-- <h4>Internet of Things: IoT Value Creation and Business Models</h4> -->
+                        <!-- <span>Curation: Michigan State University</span> -->
+                    </div>
+                </div>
+                <div class="card-body-content">
+                    <h4>Zone of Pulp</h4>
+                    <p>
+                        Pulp is a connective tissue consisting of nerves, blood vessels, ground substance, interstitial
+                        fluid, odontoblasts, fibroblasts, and other cellular components. The dental pulp consists of
+                        vascular connective tissue contained within rigid dentinal walls. Although similar to other
+                        connective tissues in the human body, it is specialized, owing to its functions and environment.
+                    </p>
+                    <span class="read-more">Read more</span>
+                    <div class="icons">
+                        <div class="icon">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            <span>Share</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Embed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- <div class="test" style="width: 500px; height: 500px; padding: 20px;">
+        <div>foo</div>
+        <svg class="test-svg">
+        </svg>
+    </div> -->
+
+    <footer>
+        <h2>Developed by Alchi</h2>
+    </footer>
+
+    <script type="module" src="./js/main.js"></script>
+    <script type="module" src="./js/script.js"></script>
+</body>
+
+</html>
