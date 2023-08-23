@@ -133,7 +133,9 @@ header {
                     display: flex;
                     flex-direction: column;
                     justify-content: end;
-                    border-radius: .5rem;
+                    // border-radius: .5rem;
+                    border-top-left-radius: .5rem;
+                    border-top-right-radius: .5rem;
 
                     h4 {
                         font-size: 1.25rem;

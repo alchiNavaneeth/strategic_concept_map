@@ -81,7 +81,6 @@ header ul li {
 .grid-container .content {
   grid-column: 8/13;
   display: flex;
-  align-items: center;
 }
 .grid-container .content .card {
   margin: 1.5rem;
@@ -108,7 +107,8 @@ header ul li {
   display: flex;
   flex-direction: column;
   justify-content: end;
-  border-radius: 0.5rem;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
 }
 .grid-container .content .card .card-head-content .black-layer h4 {
   font-size: 1.25rem;
