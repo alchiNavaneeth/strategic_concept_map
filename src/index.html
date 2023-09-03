@@ -21,6 +21,7 @@
 
     <header>
         <h2>Strategic Concept Map</h2>
+        <!-- <a href="./demo">Demo</a> -->
         <ul>
             <li>Home</li>
             <li>Search</li>
@@ -29,28 +30,26 @@
     </header>
 
     <div class="grid-container">
+        
         <!-- Strategic Map -->
         <div class="map">
-            <svg id="circle-container">
-                <!-- <defs>
-                    <pattern id="image" x="0%" y="0%" height="100%" width="100%" viewBox="0 0 500 500">
-                        <image x="0%" y="0%" width="512" height="512"
-                            xlink:href="./assets/Zone_of_Pulp.jpg">
-                        </image>
-                    </pattern>
-                </defs> -->
-                <defs>
-                    <clipPath id="circle-clip">
-                        <use xlink:href="#circle" />
-                    </clipPath>
-                </defs>
-                <g clip-path="url(#circle-clip)">
-                    <image xlink:href="./assets/IoT.jpg" width="100%" height="100%"
-                        preserveAspectRatio="xMidYMid slice" />
-                    <use xlink:href="#circle" fill="none" stroke="#0F1C3F" stroke-width="2" opacity="0.25" />
-                </g>
-            </svg>
+            <div class="animation-container hidden">
+                <div class="dot-spin"></div>
+            </div>
 
+            <div class="history-nav">
+                <div class="nav-btn">
+                    <span>History</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="drop-down">
+                    <ul class="history-list">
+                    </ul>
+                </div>
+            </div>
+
+            <svg id="circle-container">
+            </svg>
         </div>
 
         <!-- Map Content - Card -->
@@ -58,8 +57,6 @@
             <div class="card">
                 <div class="card-head-content">
                     <div class="black-layer">
-                        <!-- <h4>Internet of Things: IoT Value Creation and Business Models</h4> -->
-                        <!-- <span>Curation: Michigan State University</span> -->
                     </div>
                 </div>
                 <div class="card-body-content">
@@ -86,18 +83,10 @@
         </div>
     </div>
 
-
-    <!-- <div class="test" style="width: 500px; height: 500px; padding: 20px;">
-        <div>foo</div>
-        <svg class="test-svg">
-        </svg>
-    </div> -->
-
     <footer>
         <h2>Developed by Alchi</h2>
     </footer>
 
-    <script type="module" src="./js/main.js"></script>
     <script type="module" src="./js/script.js"></script>
 </body>
 
