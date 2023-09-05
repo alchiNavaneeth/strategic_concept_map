@@ -43,6 +43,10 @@ header ul li {
   display: none !important;
 }
 
+.popup-show {
+  overflow: hidden;
+}
+
 .grid-container {
   display: grid;
   grid-template-columns: 60% 40%;
@@ -251,6 +255,22 @@ header ul li {
   display: flex;
   width: 100%;
   padding: 1rem;
+}
+.grid-container .content .popup-layer {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100vw;
+  height: 100vh;
+  z-index: 1111111111;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+.grid-container .content .popup-layer .popup-image {
+  width: 100%;
+  height: 100%;
+  background-position: center center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 .grid-container .content .card {
   max-height: 100%;

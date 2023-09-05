@@ -27,6 +27,7 @@ let sub_categories_length;        // Total Sub Categories list
 let categories = [];              // Categories list
 let sub_categories;               // Sub Categories list
 let fill_image;                   // Center Image
+let fill_image_card;              // Card Image
 let jsonData;                     // JSON Data
 let category_points = [];         // Small inner circle points list for future use
 let sub_category_points = [];     // Small outer circle points list for future use
@@ -62,6 +63,8 @@ const card_image = document.querySelector(".card-head-content");
 const card_title = document.querySelector(".card-body-content h4");
 const card_content = document.querySelector(".card-body-content p");
 const readBtn = document.querySelector(".read-more");
+const popupImage = document.querySelector(".popup-image");
+const popupLayer = document.querySelector(".popup-layer");
 
 let holderNode;
 let threadsNode;
@@ -418,9 +421,10 @@ const handleDataLoading = async (topic) => {
   card_image.style.backgroundImage = "url(" + fill_image + ")";
 
   // Center Circle Div
-  document.querySelector(".image-div").style.cssText += `
-    background-image: url(${fill_image})
-  `;
+  document.querySelector(".image-div").style.backgroundImage = "url(" + fill_image + ")";
+  popupImage.style.backgroundImage = "url(" + fill_image + ")";
+
+  // Topic
   document.querySelector(".image-content-layer").innerText = topic;
 
   // Categories Circle Div
@@ -495,12 +499,23 @@ const handleSelections = (topic) => {
       title = jsonData[topic].categories[c_text_list[index].innerText].card_content.title;
       content = jsonData[topic].categories[c_text_list[index].innerText].card_content.content;
 
+      // highlight Circles
       c_circles_list[index].classList.add("highlight");
       c_text_list[index].classList.add("highlight");
+      
+      // Change Card Content
       card_title.innerText = title;
       card_content.innerHTML = content;
+      
+      // read more button -- reverse property
       readBtn.innerText = "Read More";
       card_content.classList.remove("expanded-content");
+
+      // Center and card image change
+      document.querySelector(".image-div").style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
+      card_image.style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
+      popupImage.style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
+      
 
       sub_highlight_contents = jsonData[topic].categories[c_text_list[index].innerText].sub_categories;
 
@@ -612,3 +627,16 @@ navBtn.addEventListener("click", (e) => {
   dropDown.classList.toggle("drop-show");
   navBtn.classList.toggle("drop-focus");
 });
+
+
+card_image.addEventListener("click", (e) => {
+  e.preventDefault();
+  popupLayer.classList.remove("hidden");
+  document.querySelector("body").classList.add("popup-show");
+});
+
+popupImage.addEventListener("click", (e) => {
+  e.preventDefault();
+  popupLayer.classList.add("hidden");
+  document.querySelector("body").classList.remove("popup-show");
+})
