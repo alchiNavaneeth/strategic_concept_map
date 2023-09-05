@@ -153,7 +153,40 @@ header ul li {
   top: 290px;
   left: 420px;
   margin: auto;
-  background-color: white;
+}
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes rotate {
+  from {
+    -webkit-transform: rotate(0deg);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+  }
+}
+.grid-container .map .animation-container .load {
+  width: 40px;
+  height: 40px;
+  border: solid 5px #00226a;
+  border-radius: 50%;
+  border-right-color: transparent;
+  border-bottom-color: transparent;
+  -webkit-transition: all 0.5s ease-in;
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-iteration-count: infinite;
+  -webkit-animation-timing-function: linear;
+  transition: all 0.5s ease-in;
+  animation-name: rotate;
+  animation-duration: 1s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }
 .grid-container .map .animation-container .dot-spin {
   width: 10px;
@@ -264,6 +297,8 @@ header ul li {
   font-size: 0.9rem;
   margin-bottom: 1rem;
   line-height: 150%;
+  max-height: 70px;
+  overflow: hidden;
 }
 .grid-container .content .card .card-body-content span {
   display: inline-block;
@@ -272,6 +307,9 @@ header ul li {
   margin-bottom: 2rem;
   font-weight: 600;
   cursor: pointer;
+}
+.grid-container .content .card .card-body-content .expanded-content {
+  max-height: none;
 }
 .grid-container .content .card .card-body-content .icons {
   display: flex;
@@ -322,6 +360,10 @@ footer h2 {
     position: static;
     top: 0;
     height: auto;
+  }
+  .grid-container .map .history-nav {
+    top: 15%;
+    z-index: inherit;
   }
   .grid-container .map .animation-container {
     left: 450px;

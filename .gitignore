@@ -7,7 +7,11 @@
 node_modules/
 dist/
 
+# Custom Files 
 Data_classification.md
+reviews.md
+* copy.*
+
 # Compiled Java class files
 *.class
 

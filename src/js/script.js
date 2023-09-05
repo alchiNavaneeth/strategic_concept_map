@@ -25,7 +25,7 @@ const handleLoadingAnimation = (animationContainer) => {
 let categories_length;            // Total Categories list
 let sub_categories_length;        // Total Sub Categories list
 let categories = [];              // Categories list
-let sub_categories = [];          // Sub Categories list
+let sub_categories;               // Sub Categories list
 let fill_image;                   // Center Image
 let jsonData;                     // JSON Data
 let category_points = [];         // Small inner circle points list for future use
@@ -36,7 +36,7 @@ let centerX = 450;                // Inner circle center points
 let centerY = 300;
 let perX = "50%";
 let perY = "50%";
-// let centerX = containerWidth / 2;                // Inner circle center points
+// let centerX = containerWidth / 2;
 // let centerY = containerHeight / 2;
 
 // Radii for the circles
@@ -44,7 +44,7 @@ let firstRadius = 70;
 let secondRadius = firstRadius + 20;
 let secondTextRadius = firstRadius + 60;
 let thirdRadius = secondRadius + 130;
-let thirdTextRadius = secondRadius + 170;
+let thirdTextRadius = secondRadius + 180;
 
 // Stroke color and width for the second and third circles
 const mainCircleStroke = "rgba(0, 0, 0, .3)";
@@ -68,9 +68,10 @@ let threadsNode;
 let imageNode;
 let contentNode;
 let rotateAngle;
-let chosenTopic = "Zone of Pulp";
+let chosenTopic = "Dental Pulp";
 let chosenTopicList = [];
-let fullText, textArr, limitedText;
+let rightTextAngle = -60, leftTextAngle = 60;
+
 
 // .....
 // Media Query for Variying the inner circle center
@@ -114,7 +115,6 @@ handleMediaQuery(mediaQuery);
 // .....
 // Inserting g container elements that holds the various map parts
 // .....
-
 const handleInitialization = (topic) => {
 
   // Top g element --- g will be mentioned as node
@@ -217,19 +217,34 @@ const handleInitialization = (topic) => {
   handleDataFetch(topic);
 }
 
+
 // .....
 // Fetching data from JSON function
 // .....
 const handleDataFetch = async (topic) => {
+  sub_categories = [];
+  sub_categories_length = 0;
   await fetch("./data/data.json")
     .then(response => response.json())
     .then(data => {
       jsonData = data;
-      categories_length = data[topic].categories_list.length;
-      sub_categories_length = data[topic].sub_categories_list.length;
-      categories = data[topic].categories_list;
-      sub_categories = data[topic].sub_categories_list;
+      categories_length = Object.keys(data[topic].categories).length;
+      categories = Object.keys(data[topic].categories);
+
+      for (let i = 0; i < categories_length; i++) {
+        let l = data[topic].categories[categories[i]].sub_categories.length;
+        let s = data[topic].categories[categories[i]].sub_categories;
+        sub_categories_length += l;
+
+        for (let j = 0; j < l; j++) {
+          sub_categories.push(s[j]);
+        }
+      }
+      // sub_categories = Object.keys(data[topic].sub_categories);
       fill_image = data[topic].img;
+
+      card_title.innerText = data[topic].card_content.title;
+      card_content.innerHTML = data[topic].card_content.content;
     });
 
   handleCircles(topic);
@@ -238,6 +253,7 @@ const handleDataFetch = async (topic) => {
 
 // .....
 // Appending Circles based on the data
+// .....
 const handleCircles = (topic) => {
   // .....
   // Append 6 stroked circles along the circumference of the second (inner) circle
@@ -280,10 +296,10 @@ const handleCircles = (topic) => {
     if (i >= categories_length / 2) {
       d3.select(".tc-" + (i + 1)).append("foreignObject")
         .attr("class", "content-fo c-fo-" + (i + 1))
-        .attr("x", textX - 55)
-        .attr("y", textY - 10)
+        .attr("x", textX - 70)
+        .attr("y", textY - 15)
         .attr("width", "90")
-        .attr("height", "36");
+        .attr("height", "42");
 
       document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text right-align">Macrophages, Lymphocytes, and Plasma Cells</div>`;
     }
@@ -292,11 +308,9 @@ const handleCircles = (topic) => {
       d3.select(".tc-" + (i + 1)).append("foreignObject")
         .attr("class", "content-fo c-fo-" + (i + 1))
         .attr("x", textX - 15)
-        .attr("y", textY - 10)
-        // .attr("x", textX)
-        // .attr("y", textY)
+        .attr("y", textY - 15)
         .attr("width", "90")
-        .attr("height", "36");
+        .attr("height", "42");
 
       document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text"></div>`;
     }
@@ -375,9 +389,9 @@ const handleCircles = (topic) => {
     n++;
   }
 
-  // let textAngle = -60;
   document.querySelectorAll(".sc-text").forEach(div => {
     div.style.cssText = `
+      font-family: 'Raleway', sans-serif;
       font-size: 10px;
       color: ${textColor};
       font-weight: 600;
@@ -388,7 +402,7 @@ const handleCircles = (topic) => {
   document.querySelectorAll(".right-align").forEach(div => {
     div.style.cssText += `
       text-align: right;
-    `
+    `;
   });
 
   handleDataLoading(topic);
@@ -435,13 +449,12 @@ const handleSelections = (topic) => {
   const c_text_list = document.querySelectorAll(".c-text");
   const allCirclesList = [c_circles_list, c_text_list, sc_circles_list, sc_text_list];
 
-  // card_image.style.backgroundImage = "url(" + fill_image + ")";
 
   // .....
   // Threads Integration
   // .....
   for (let i = 0; i < categories_length; i++) {
-    let sc_highlight_list = Object.keys(jsonData[topic].categories[c_text_list[i].innerText].sub_categories);
+    let sc_highlight_list = jsonData[topic].categories[c_text_list[i].innerText].sub_categories;
 
     for (let j = 0; j < sub_categories_length; j++) {
       for (let k = 0; k < sc_highlight_list.length; k++) {
@@ -485,9 +498,11 @@ const handleSelections = (topic) => {
       c_circles_list[index].classList.add("highlight");
       c_text_list[index].classList.add("highlight");
       card_title.innerText = title;
-      card_content.innerText = content;
+      card_content.innerHTML = content;
+      readBtn.innerText = "Read More";
+      card_content.classList.remove("expanded-content");
 
-      sub_highlight_contents = Object.keys(jsonData[topic].categories[c_text_list[index].innerText].sub_categories);
+      sub_highlight_contents = jsonData[topic].categories[c_text_list[index].innerText].sub_categories;
 
       for (let j = 0; j < sc_text_list.length; j++) {
         for (let k = 0; k < sub_highlight_contents.length; k++) {
@@ -502,22 +517,18 @@ const handleSelections = (topic) => {
 
     // For Sub Categories Circles
     else {
-      title = jsonData[topic].sub_categories[sc_text_list[index].innerText].card_content.title;
-      content = jsonData[topic].sub_categories[sc_text_list[index].innerText].card_content.content;
 
       chosenTopicList.push(chosenTopic);
       chosenTopic = sc_text_list[index].innerText;
+
       handleLoadingAnimation(animationContainer);
       setTimeout(() => {
         document.querySelector("#circle-container").innerHTML = "";
         handleInitialization(chosenTopic);
-        card_title.innerText = title;
-        card_content.innerText = content;
-        handleReadMore(content)
+        readBtn.innerText = "Read More";
+        card_content.classList.remove("expanded-content");
         handleNavHistory();
       }, 2000);
-      // sc_circles_list[index].classList.add("highlight");
-      // sc_text_list[index].classList.add("highlight");
     }
   }
 
@@ -531,43 +542,13 @@ const handleSelections = (topic) => {
         e.preventDefault();
         if (i < 2) {
           clickHandler("c", index);
-          setTimeout(handleReadMore(), 2000);
         }
         else {
           clickHandler("sc", index);
-          setTimeout(handleReadMore(), 2000);
         }
       })
     })
   });
-}
-
-let handleText;
-// .....
-// Read more funtion for card content
-// .....
-const handleReadMore = (fullText = card_content.innerText) => {
-
-  textArr = fullText.split(" ");
-  limitedText = "";
-  card_content.innerText = "";
-
-  for (let i = 0; i < 25; i++) {
-    limitedText += " " + textArr[i];
-  }
-
-  handleText = (which) => {
-    if (which == "limit") {
-      readBtn.innerText = "Read More";
-      card_content.innerText = limitedText + "...";
-    }
-
-    else {
-      readBtn.innerText = "Read Less";
-      card_content.innerText = fullText;
-    }
-  }
-  handleText("limit");
 }
 
 
@@ -575,22 +556,27 @@ const handleReadMore = (fullText = card_content.innerText) => {
 // Calling the main function - Initialization
 // .....
 handleInitialization(chosenTopic);
-handleReadMore();
 
+
+// .....
+// Read more funtion for card content
+// .....
 readBtn.addEventListener("click", (e) => {
   e.preventDefault();
   if (readBtn.innerText == "Read More") {
-    handleText("full");
+    readBtn.innerText = "Read Less";
+    card_content.classList.add("expanded-content");
   }
   else {
-    handleText("limit");
+    readBtn.innerText = "Read More";
+    card_content.classList.remove("expanded-content");
   }
-})
+});
+
 
 // .....
 // Navigation History
 // .....
-
 const handleNavHistory = () => {
   ulList.innerHTML = "";
 
@@ -603,6 +589,20 @@ const handleNavHistory = () => {
     item.addEventListener("click", (e) => {
       e.preventDefault();
       // History nav list items click function - For fututre ref
+      chosenTopicList.push(chosenTopic);
+      chosenTopic = item.innerText;
+
+      handleLoadingAnimation(animationContainer);
+      setTimeout(() => {
+        document.querySelector("#circle-container").innerHTML = "";
+        handleInitialization(chosenTopic);
+        readBtn.innerText = "Read More";
+        card_content.classList.remove("expanded-content");
+        chosenTopicList.splice(chosenTopicList.indexOf(chosenTopic), 1);
+        handleNavHistory();
+        dropDown.classList.remove("drop-show");
+        navBtn.classList.remove("drop-focus");
+      }, 2000);
     })
   })
 }
@@ -612,6 +612,3 @@ navBtn.addEventListener("click", (e) => {
   dropDown.classList.toggle("drop-show");
   navBtn.classList.toggle("drop-focus");
 });
-
-
-

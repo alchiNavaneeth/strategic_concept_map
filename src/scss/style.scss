@@ -125,7 +125,7 @@ header {
                 transform: scale(0);
                 opacity: 0;
                 transition: transform 0.5s cubic-bezier(0.125, 1.085, 0.325, 1.08) 0s, opacity 0.1s ease 0s;
-                
+
                 @keyframes downOut {
                     0% {
                         transform: translateZ(200px) transLateY(40px)
@@ -185,7 +185,48 @@ header {
             top: 290px;
             left: 420px;
             margin: auto;
-            background-color: white;
+            // background-color: white;
+
+            @keyframes rotate {
+                from {
+                    transform: rotate(0deg);
+                }
+
+                to {
+                    transform: rotate(360deg);
+                }
+            }
+
+            @-webkit-keyframes rotate {
+                from {
+                    -webkit-transform: rotate(0deg);
+                }
+
+                to {
+                    -webkit-transform: rotate(360deg);
+                }
+            }
+
+            .load {
+                width: 40px;
+                height: 40px;
+                // margin: 110px auto 0;
+                border: solid 5px #00226a;
+                border-radius: 50%;
+                border-right-color: transparent;
+                border-bottom-color: transparent;
+                -webkit-transition: all 0.5s ease-in;
+                -webkit-animation-name: rotate;
+                -webkit-animation-duration: 1.0s;
+                -webkit-animation-iteration-count: infinite;
+                -webkit-animation-timing-function: linear;
+
+                transition: all 0.5s ease-in;
+                animation-name: rotate;
+                animation-duration: 1.0s;
+                animation-iteration-count: infinite;
+                animation-timing-function: linear;
+            }
 
             .dot-spin {
                 // position: relative;
@@ -343,6 +384,8 @@ header {
                     font-size: .9rem;
                     margin-bottom: 1rem;
                     line-height: 150%;
+                    max-height: 70px;
+                    overflow: hidden;
                 }
 
                 span {
@@ -352,6 +395,10 @@ header {
                     margin-bottom: 2rem;
                     font-weight: 600;
                     cursor: pointer;
+                }
+
+                .expanded-content {
+                    max-height: none;
                 }
 
                 .icons {
@@ -419,6 +466,11 @@ footer {
             position: static;
             top: 0;
             height: auto;
+
+            .history-nav {
+                top: 15%;
+                z-index: inherit;
+            }
 
             .animation-container {
                 left: 450px;
