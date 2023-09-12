@@ -1,6 +1,6 @@
 {
     "Dental Pulp": {
-        "img": "./assets/Dental_Pulp.jpg",
+        "img": "./assets/Dental_Pulp/Dental_Pulp.jpg",
         "card_content": {
             "title": "Dental Pulp",
             "content": "The dental pulp consists of vascular connective tissue contained within rigid dentinal walls. Although similar to other connective tissues in the human body, it is specialized, owing to its functions and environment."
@@ -8,7 +8,7 @@
         "categories": {
             "Normal Pulp": {
                 "card_content": {
-                    "img": "./assets/Normal_Pulp.jpg",
+                    "img": "./assets/Dental_Pulp/Categories/Normal_Pulp.jpg",
                     "title": "Dental Pulp: Normal Pulp",
                     "content": "Pulp is a connective tissue consisting of nerves, blood vessels, ground substance, interstitial fluid, odontoblasts, fibroblasts, and other cellular components."
                 },
@@ -21,7 +21,7 @@
             },
             "Pulp Space Anatomy of Individual Tooth": {
                 "card_content": {
-                    "img": "./assets/Anatomy_of_Individual_Tooth.jpg",
+                    "img": "./assets/Dental_Pulp/Categories/Anatomy_of_Individual_Tooth.jpg",
                     "title": "Dental Pulp: Pulp Space Anatomy of Individual Tooth",
                     "content": "The external morphologic features of the crowns of teeth vary according to the shape and size of the head. The length of the crown differs with the size and gender of the person and is generally shorter in females than in males. As the external morphology of the tooth varies from person to person, so does the internal morphology of the crown and root. Changes in pulp cavity anatomy result from age, disease, and trauma. Although morphologic variations occur, clinical experience indicates that these changes usually follow a general pattern, and thus the study of pulp cavity morphology is an important undertaking."
                 },
@@ -41,15 +41,18 @@
             },
             "Diseases of the Dental Pulp": {
                 "card_content": {
-                    "img": "./assets/Diseases_of_Dental_Pulp.jpg",
+                    "img": "./assets/Dental_Pulp/Categories/Diseases_of_Dental_Pulp.jpg",
                     "title": "Dental Pulp: Diseases of the Dental Pulp",
-                    "content": "<strong>No Available content for 'Diseases of the Dental Pulp'. Using prev content as placeholder.</strong> Changes in pulp cavity anatomy result from age, disease, and trauma. Although morphologic variations occur, clinical experience indicates that these changes usually follow a general pattern, and thus the study of pulp cavity morphology is an important undertaking."
+                    "content": "The pulp is the formative organ of the tooth. It builds primary dentin during the development of the tooth, secondary dentin after tooth eruption, and reparative dentin in response to stimulation as long as the odontoblasts remain intact.<br><br>The pulp has been described as a highly resistant organ and as an organ with little resistance or healing ability. Its resistance depends on cellular activity, nutritional supply, age, and other metabolic and physiologic parameters.<br><br>Accurate pulpal diagnosis is the key to all endodontic treatments. Unfortunately, there has been a poor correlation between the clinical symptoms and the histopathology of the pulp. Previous attempts that have been made to diagnose the condition of the pulp based on clinical signs (or symptoms), electric pulp test, and/or thermal tests and radiography have not always been successful. The endodontist is expected to understand the various causative factors of pulpal diseases, collect information about the presentation and history of symptoms, and conduct many practical tests before formulating the final diagnosis.<br><br><strong>Clinical Note</strong>The value of the pulp as an integral part of the tooth, both anatomic and functional, should be recognized and every effort made to conserve it."
                 },
-                "sub_categories": []
+                "sub_categories": [
+                    "Classification",
+                    "Causes"
+                ]
             },
             "Pulp Space Anatomy": {
                 "card_content": {
-                    "img": "./assets/Pulp_Space_Anatomy.jpg",
+                    "img": "./assets/Dental_Pulp/Categories/Pulp_Space_Anatomy.jpg",
                     "title": "Dental Pulp: Pulp Space Anatomy",
                     "content": "he external morphologic features of the crowns of teeth vary according to the shape and size of the head. The length of the crown differs with the size and gender of the person and is generally shorter in females than in males. As the external morphology of the tooth varies from person to person, so does the internal morphology of the crown and root. Changes in pulp cavity anatomy result from age, disease, and trauma. Although morphologic variations occur, clinical experience indicates that these changes usually follow a general pattern, and thus the study of pulp cavity morphology is an important undertaking."
                 },
@@ -71,7 +74,7 @@
     },
 
     "Zones of Pulp": {
-        "img": "./assets/Zones_of_Pulp.jpg",
+        "img": "./assets/Zones_of_Pulp/Zones_of_Pulp.jpg",
         "card_content": {
             "title": "Zones of Pulp",
             "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone. This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
@@ -79,13 +82,13 @@
         "categories": {
             "Odontoblastic Zone": {
                 "card_content": {
-                    "img": "./assets/Odontoblastic_Zone.jpg",
+                    "img": "./assets/Zones_of_Pulp/Categories/Odontoblastic_Zone.jpg",
                     "title": "Zone of Pulp: Odontoblastic Zone",
                     "content": "The odontoblasts are specialized cells that generally last the entire life of the tooth. They consist of cell bodies and their cytoplasmic processes. The odontoblastic cell bodies form the odontoblastic zone, whereas the odontoblastic processes are located within the predentin matrix and the dentinal tubules, extending into the dentin. In this odontoblastic zone, capillaries and unmyelinated sensory nerves are found around the odontoblastic cell bodies. The odontoblasts lining the predentin represent the link between the dentin and the pulp. They are the matrix-producing cells and show characteristic features associated with protein synthesis."
                 },
                 "sub_categories": [
                     "Predentin Layer",
-                    "Odontoblastic Zone",
+                    "Odontoblastic Process",
                     "Incremental Lines",
                     "Dentinal Tubules",
                     "Primary Dentin",
@@ -95,7 +98,7 @@
             },
             "Cell Free Zone": {
                 "card_content": {
-                    "img": "./assets/Cell_Free_Zone.jpg",
+                    "img": "./assets/Zones_of_Pulp/Categories/Cell_Free_Zone.jpg",
                     "title": "Zone of Pulp: Cell Free Zone",
                     "content": "The cell-free zone, or zone of Weil, is a relatively acellular zone of the pulp, located centrally to the odontoblast zone. This zone, although called cell-free, contains some fibroblasts, mesenchymal cells, and macrophages. Fibroblasts are involved in the production and maintenance of the reticular fibers found in this zone. When odontoblasts are destroyed by noxious stimuli, mesenchymal cells and fibroblasts differentiate into new odontoblasts. Macrophages are present for the phagocytosis of debris. The main constituents of this zone are a plexus of capillaries, the nerve plexus of Raschkow, and the ground substance. The capillary plexus is involved in the nutrition of the odontoblasts and the cells of the zone and is conspicuous only during periods of dentinogenesis and inflammation. The ground substance is involved in the metabolic exchanges of the cells and limits the spread of infection because of its consistency. The zone of Weil is more prominent in the coronal pulp, but it may be completely absent during periods of dentinogenesis."
                 },
@@ -103,7 +106,7 @@
             },
             "Cell Rich Zone": {
                 "card_content": {
-                    "img": "./assets/Cell_Rich_Zone.jpg",
+                    "img": "./assets/Zones_of_Pulp/Categories/Cell_Rich_Zone.jpg",
                     "title": "Zone of Pulp: Cell Rich Zone",
                     "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages."
                 },
@@ -116,7 +119,7 @@
             },
             "Central Zone": {
                 "card_content": {
-                    "img": "./assets/Central_Zone.png",
+                    "img": "./assets/Zones_of_Pulp/Categories/Central_Zone.png",
                     "title": "Zone of Pulp: Central Zone",
                     "content": "The central zone or pulp proper contains blood vessels and nerves that are embedded in the pulp matrix together with fibroblasts. From their central location, the blood vessels and the nerves send branches to the periphery of the pulp."
                 },
@@ -126,169 +129,130 @@
                     "Innervation"
                 ]
             }
-        }
-    },
-
-    "Primary Dentin": {
-        "card_content": {
-            "title": "Primary Dentin",
-            "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone. This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
         },
-        "img": "./assets/concept-dental.jpg",
-        "categories": {
-            "Odontoblastic Zone": {
+        "sub_categories": {
+            "Predentin Layer": {
                 "card_content": {
-                    "title": "Zone of Pulp: Odontoblastic Zone",
-                    "content": "The odontoblasts are specialized cells that generally last the entire life of the tooth. They consist of cell bodies and their cytoplasmic processes. The odontoblastic cell bodies form the odontoblastic zone, whereas the odontoblastic processes are located within the predentin matrix and the dentinal tubules, extending into the dentin. In this odontoblastic zone, capillaries and unmyelinated sensory nerves are found around the odontoblastic cell bodies. The odontoblasts lining the predentin represent the link between the dentin and the pulp. They are the matrix-producing cells and show characteristic features associated with protein synthesis."
-                },
-                "sub_categories": [
-                    "Predentin Layer",
-                    "Odontoblastic Zone",
-                    "Incremental Lines",
-                    "Dentinal Tubules",
-                    "Primary Dentin",
-                    "Secondary Dentin",
-                    "Tertiary Dentin"
-                ]
+                    "title": "Odontoblastic Zone: Predentin Layer",
+                    "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone.<br> <img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Predentin_Layer.jpg' alt='Image-1'> <br>This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
+                }
             },
-            "Cell Free Zone": {
+            "Odontoblastic Process": {
                 "card_content": {
-                    "title": "Zone of Pulp: Cell Free Zone",
-                    "content": "The cell-free zone, or zone of Weil, is a relatively acellular zone of the pulp, located centrally to the odontoblast zone. This zone, although called cell-free, contains some fibroblasts, mesenchymal cells, and macrophages. Fibroblasts are involved in the production and maintenance of the reticular fibers found in this zone. When odontoblasts are destroyed by noxious stimuli, mesenchymal cells and fibroblasts differentiate into new odontoblasts. Macrophages are present for the phagocytosis of debris. The main constituents of this zone are a plexus of capillaries, the nerve plexus of Raschkow, and the ground substance. The capillary plexus is involved in the nutrition of the odontoblasts and the cells of the zone and is conspicuous only during periods of dentinogenesis and inflammation. The ground substance is involved in the metabolic exchanges of the cells and limits the spread of infection because of its consistency. The zone of Weil is more prominent in the coronal pulp, but it may be completely absent during periods of dentinogenesis."
-                },
-                "sub_categories": []
+                    "title": "Odontoblastic Zone: Odontoblastic Process",
+                    "content": "The odontoblastic processes, also referred to as Tomes' processes, are housed within the dentinal tubules. The extent of the odontoblastic processes in dentin has not been determined. During the early stages of tooth development, the processes extend into the entire thickness of the dentin. Studies in adult teeth have given conflicting information on the extent of the processes. Some studies claim that these processes extend into one-third of the thickness of the dentin (0.7 mm), whereas others claim that the processes extend through the thickness of the dentin and reach the Dentinoenamel junction. The space around the odontoblastic processes, the periodontoblastic space, and the space peripheral to the end of the odontoblastic processes are filled with extracellular fluid. This fluid originates from the capillary transudate and plays an important role in sensory transmission."
+                }
             },
-            "Cell Rich Zone": {
+            "Incremental Lines": {
                 "card_content": {
-                    "title": "Zone of Pulp: Cell Rich Zone",
-                    "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages."
-                },
-                "sub_categories": [
-                    "Ground Substance",
-                    "Fibroblasts",
-                    "Undifferentiated Mesenchymal Cells",
-                    "Macrophages, Lymphocytes, and Plasma Cells"
-                ]
+                    "title": "Odontoblastic Zone: Incremental Lines",
+                    "content": "During dentinogenesis, there are periods of activity and periods of rest. These periods are demarcated by the presence of lines, called incremental lines. These lines are accentuated during periods of illness, by deficiencies in nutrition, and at birth. The accentuated incremental line that occurs at birth is called the neonatal line. In some areas in the mature dentin, the matrix has not calcified or is hypocalcified. These areas are called interglobular dentin. One also sees spaces in the root dentin near the cementodentinal junction called the granular layer of Tomes.<img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Incremental_Lines.jpg' alt='Image-1'>"
+                }
             },
-            "Central Zone": {
+            "Dentinal Tubules": {
                 "card_content": {
-                    "title": "Zone of Pulp: Central Zone",
-                    "content": "The central zone or pulp proper contains blood vessels and nerves that are embedded in the pulp matrix together with fibroblasts. From their central location, the blood vessels and the nerves send branches to the periphery of the pulp."
-                },
-                "sub_categories": [
-                    "Blood Vessels of Pulp",
-                    "Lymphatic Drainage",
-                    "Innervation"
-                ]
+                    "title": "Odontoblastic Zone: Dentinal Tubules",
+                    "content": "The dentinal tubules extend from the predentin border to the dentinoenamel and the dentinocemental junctions. They are conical in shape, with a 2.5 μm mean diameter in the pulpal wall and a 0.9 μm mean diameter in the dentinoenamel or dentinocemental junctions because of the deposition of the peritubular dentin.<img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_1.jpg' alt='Image-1'> As the dentinal tubules approach the dentinoenamel junction, they branch and increase the ratio per unit area over that of the middle third of the dentin. The branching of the dentinal tubules occurs during the beginning of dentinogenesis. Each preodontoblast sends various cytoplasmic processes into the acellular zone and thereby produces several future dentinal tubules. As the fully mature odontoblast migrates pulpally, the processes unite to form a single dentinal tubule with terminal branches at the dentinoenamel junction. This branching may explain the extreme sensitivity of the Dentinoenamel junction. Because the peritubular dentin has an organic matrix with fewer collagen fibers than the intertubular dentin, it is more mineralized and harder. As the pulp ages, the continuous deposition of peritubular dentin may obliterate the dentinal tubules peripherally. This obliteration of tubules results in the formation of the sclerotic dentin, which has a glassy appearance under transmitted light.<img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_2.jpg' alt='Image-1'>"
+                }
+            },
+            "Primary Dentin": {
+                "card_content": {
+                    "title": "Odontoblastic Zone: Primary Dentin",
+                    "content": "Primary dentin is elaborated before the teeth erupt and is divided into mantle and circumpulpal dentin. Mantle dentin, the first calcified layer of the dentin deposited against the enamel, forms the dentinal side of the dentinoenamel junction. Circumpulpal dentin is the dentin formed after the layer of mantle dentin. Primary dentin fulfils the initial formative function of the pulp.<img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Primary_Dentin.jpg' alt='Image-1'>"
+                }
+            },
+            "Secondary Dentin": {
+                "card_content": {
+                    "title": "Odontoblastic Zone: Secondary Dentin",
+                    "content": "Secondary dentin is elaborated after eruption of the teeth. It can be differentiated from primary dentin by the sharp bending of the tubules producing a line of demarcation. It is deposited unevenly on primary dentin at a low rate and has incremental patterns and tubular structures less regular than those of primary dentin. For example, secondary dentin is deposited in greater quantities in the floor and roof of the pulp chamber than on the walls. This uneven deposition explains the pattern of reduction of the pulp chamber and pulp horns as teeth age. This deposition of secondary dentin protects the pulp.<img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Secondary_Dentin.jpg' alt='Image-1'>"
+                }
+            },
+            "Tertiary Dentin": {
+                "card_content": {
+                    "title": "Odontoblastic Zone: Tertiary Dentin",
+                    "content": "Two types of tertiary dentin are recognized:<br>1. Tertiary dentin formed by primary odontoblasts following a mild stimulus is called reactionary dentin.<br>2. Tertiary dentin formed by newly differentiated or secondary odontoblasts is termed reparative dentin.<br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Tertiary_Dentin_1.jpg' alt='Image-1'><br>When a mild stimulus is applied to the odontoblasts for a prolonged period of time, such as abrasion, reparative dentin may be deposited at a slower rate. This tissue is characterized by slightly irregular tubules. On the other hand, an aggressive carious lesion or other abrupt stimulus stimulates the production of reparative dentin with fewer and more irregular tubules. If the odontoblast is injured beyond repair, the degenerated odontoblasts will leave empty tubules, called dead tracts, which allow bacteria and noxious products to enter the pulp.<br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Tertiary_Dentin_2.jpg' alt='Image-1'><br><br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Tertiary_Dentin_3.jpg' alt='Image-1'><br>Reparative dentin is deposited on the pulpal wall of a dead tract unless the pulp is too atrophic. Because reparative dentin has fewer tubules, although it is less mineralized, it blocks the ingress of noxious products into the pulp. As the caries progress and as more odontoblasts are injured beyond repair, the layers of reparative dentin become more atubular and may have cell inclusions, i.e., trapped odontoblasts. The cellular inclusions are uncommon in human teeth. On removal of the caries, the mesenchymal cells of the cell-rich zone differentiate into odontoblasts to replace those that have necrosed. These newly formed odontoblasts can produce well-organized dentin or an amorphous, poorly calcified, permeable dentin. The demarcation zone between secondary and reparative dentin is called the calciotraumatic line.<br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Tertiary_Dentin_4.jpg' alt='Image-1'><br>"
+                }
+            },
+            "Ground Substance": {
+                "card_content": {
+                    "title": "Cell Rich Zone: Ground Substance",
+                    "content": "Ground substance, the main constituent of the pulp, is the part of the matrix that surrounds and supports the cellular and vascular elements of the pulp. It is a gelatinous substance composed of proteoglycans, glycoproteins, and water. <br> Ground substance serves as a transport medium for metabolites and waste products of cells and as a barrier against the spread of bacteria. Age and disease may change the composition and function of the ground substance."
+                }
+            },
+            "Fibroblasts": {
+                "card_content": {
+                    "title": "Cell Rich Zone: Fibroblasts",
+                    "content": "The fibroblasts are the predominant cells of the pulp. They may originate from undifferentiated mesenchymal cells of the pulp or from the division of existing fibroblasts. The fibroblasts are stellate in shape, with ovoid nuclei and cytoplasmic processes. As they age, they become rounder, with round nuclei and short cytoplasmic processes. Although fibroblasts are present in the cell-free and central zones of the pulp, they are concentrated in the cell-rich zone, especially in the coronal portion.<br><br>The function of the fibroblasts is elaboration of ground substance and collagen fibers, which constitute the matrix of the pulp. The fibroblasts are also involved in the degradation of collagen and the deposition of calcified tissue. They can elaborate denticles and can differentiate to replace dead odontoblasts, with the potential for reparative dentin formation.<br><br>Compared to the coronal third, the apical third of the mature pulp contains more collagen fibers and is therefore more fibrous and has a whitish coloration. This fibrous characteristic of the apical third protects the neurovascular bundle from injury and is of clinical significance because it facilitates the removal of the pulp during pulpectomy.<br><br>Because of the reduction of the pulp space through the continuous deposition of secondary dentin and because of the increased deposition of collagen, the pulp becomes more fibrous with age. Concomitantly, one sees a decrease in cellular elements and a reduction in the reparative potential of the pulp."
+                }
+            },
+            "Undifferentiated Mesenchymal Cells": {
+                "card_content": {
+                    "title": "Cell Rich Zone: Undifferentiated Mesenchymal Cells",
+                    "content": "The undifferentiated mesenchymal cells are derived from the mesenchymal cells of the dental papilla. Because of their function in repair and regeneration, they retain pluripotential characteristics and can differentiate into fibroblasts, odontoblasts, macrophages, or osteoclasts. They resemble fibroblasts as they are stellate in shape, with a large nucleus and little cytoplasm. These cells, if present, are usually located around blood vessels in the cell-rich zone and are difficult to recognize."
+                }
+            },
+            "Macrophages, Lymphocytes, and Plasma Cells": {
+                "card_content": {
+                    "title": "Cell Rich Zone: Macrophages, Lymphocytes, and Plasma Cells",
+                    "content": "Macrophages are found in the cell-rich zone, especially near the blood vessels. These cells are blood monocytes that have migrated into the pulp tissue. Their function is to phagocytize necrotic debris and foreign materials. Lymphocytes and plasma cells, if present in the normal pulp, are found in the coronal subodontoblastic region. The function of these cells in the normal pulp may be immune surveillance."
+                }
+            },
+            "Blood Vessels of Pulp": {
+                "card_content": {
+                    "title": "Central Zone: Blood Vessels of Pulp",
+                    "content": "The neurovascular bundle enters the pulp through the apical foramina. It consists of one or two arterioles with their sympathetic nerve fibers and myelinated and unmyelinated sensory nerves entering the pulp, and two or three venules and lymphatic vessels exiting the pulp. In some teeth, accessory foramina may serve as portals of entry and exit for blood vessels only.<br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Blood_Vessels.jpg' alt='Image-1'><br>Schematic presentation of the intradental innervation. The nerve bundles enter the pulp via the apical foramen/foramina and branch extensively especially in the coronal pulp. The pulp-dentin border zone in the peripheral pulp (pulp tips) is the most densely innervated area, where the nerve endings also extend the longest distance (100 - 150 um) into the dentinal tubules.<br>The pulpal blood flow mainly determines the speed of diffusion between the blood and the interstitial fluid; the higher the blood flow, the faster the diffusion. Regulation of an adequate blood flow is a crucial point for survival and normal function in any tissue.<br><br>i. Afferent circulation of the pulp consists of the arterioles entering the apical foramen. As these vessels traverse the center of the pulp, they branch into terminal arterioles, metarterioles, precapillaries, and finally capillaries. The capillaries end in the cell-poor zone and form a rich subodontoblastic plexus.<br><br>ii. Efferent circulation consists of postcapillary venules and collecting venules, which empty into two or three venules that exit through the apical foramina and empty into the vessels in the PDL. Lymphatic vessels follow this same pattern.<br>The function of blood vessels is to transport nutrients, fluids, and oxygen to the tissues and to remove metabolic waste from the tissues by maintaining an adequate flow of blood through the capillaries. This metabolic exchange occurs in the capillary bed.<br><br>The transfer of nutrients and metabolic waste through the capillary walls is controlled by the laws of hydrostatics and osmosis. The walls of the capillaries are an average of 0.5 μm thickness and serve as a permeable membrane that permits the exchange of fluids. The absorption of metabolic wastes and fluids prevents their accumulation in the pulpal tissues and also precludes increases in the pulpal tissue pressure."
+                }
+            },
+            "Lymphatic Drainage": {
+                "card_content": {
+                    "title": "Central Zone: Lymphatic Drainage",
+                    "content": "Lymphatic vessels are present in the pulp. The function of these vessels is the removal of interstitial fluid and metabolic waste products to maintain the intrapulpal tissue pressure at a normal level. These lymphatic vessels follow the course of the venules toward the apical foramen.<br><br><strong>Interstitial Fluid</strong>Interstitial fluid bathes all the pulpal tissues and fills the dentinal tubules in their distal extension and around the odontoblastic processes. The interstitial fluid that fills the dentinal tubules is called the dentinal fluid. As previously discussed, the encasement of the pulp in dentin produces a limited environment permitting only a small amount of interstitial fluid.<br><br><strong>Tissue Fluid Pressure</strong>The hydrostatic pressure in the interstitial fluid surrounding the pulpal cells is called the pulpal tissue fluid pressure."
+                }
+            },
+            "Innervation": {
+                "card_content": {
+                    "title": "Central Zone: Innervation",
+                    "content": "The sensory mechanism of the pulp is composed of sensory afferent and autonomic efferent systems.<br><ul><li>The afferent system conducts impulses perceived by the pulp from a variety of stimuli to the cortex of the brain, where they are interpreted as pain, regardless of the stimulus<strong>(Box 1.1).</strong></li><br><li>The efferent motor pathway in the dental pulp consists of sympathetic fibers from the cervical ganglion that enter through the apical foramina in the outer layer of the arterioles, the tunica adventitia. The sympathetic nerves provide vasomotor control to circulation and therefore regulate the blood flow and intrapulpal blood pressure in response to stimuli. Approximately 80% of the nerves of the pulp are <strong>C fibers</strong> and the rest are <strong>Aδ fibers (Table 1.1).</strong></li></ul><br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_1.jpg' alt='Image-1'><br><br><img class='image-center' src='./assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_2.jpg' alt='Image-1'><br>Distribution of intradental A- and C-fibers. Unmyelinated C-fibers are located in the pulp proper, whereas myelinated A-fibers are extensively distributed in the pulp dentin border, penetrating the inner part of dentin."
+                }
             }
         }
     },
 
-    "Secondary Dentin": {
+    "Classification": {
+        "img": "./assets/Dental_Pulp/Dental_Pulp.jpg",
         "card_content": {
-            "title": "Secondary Dentin",
-            "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone. This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
+            "title": "Classification",
+            "content": "The dental pulp consists of vascular connective tissue contained within rigid dentinal walls. Although similar to other connective tissues in the human body, it is specialized, owing to its functions and environment."
         },
-        "img": "./assets/concept-dental.jpg",
         "categories": {
-            "Odontoblastic Zone": {
+            "Inflammatory Disease": {
                 "card_content": {
-                    "title": "Zone of Pulp: Odontoblastic Zone",
-                    "content": "The odontoblasts are specialized cells that generally last the entire life of the tooth. They consist of cell bodies and their cytoplasmic processes. The odontoblastic cell bodies form the odontoblastic zone, whereas the odontoblastic processes are located within the predentin matrix and the dentinal tubules, extending into the dentin. In this odontoblastic zone, capillaries and unmyelinated sensory nerves are found around the odontoblastic cell bodies. The odontoblasts lining the predentin represent the link between the dentin and the pulp. They are the matrix-producing cells and show characteristic features associated with protein synthesis."
+                    "img": "./assets/Classification/Categories/Inflammatory_Disease.png",
+                    "title": "Classification: Inflammatory Disease",
+                    "content": "Pulpitis or inflammation of the pulp may be reversible or irreversible, symptomatic (acute) or asymptomatic (chronic), partial or total, and the pulp may be infected or sterile. The extent of inflammation, whether partial or total, cannot be determined histologically, and the bacteriologic state, whether the tissue is infected or sterile, cannot be determined except by smear or culture. The only clinical differentiation possible in pulpitis is between the symptomatic and asymptomatic stages of the disease.<br><br>The sequelae of the various diseases of the pulp are depicted in the flowchart below:<br> <img class='image-center' src='./assets/Classification/Categories/Inflammatory_Disease.png' alt='Image-1'> <br>The clinical classification of pulpal diseases is based primarily on symptoms. No correlation exists between histopathologic findings and the existing symptoms. The value of the clinical classification lies in its use by the clinician to determine the appropriate care and treatment, the endodontic prognosis, and probably the restorative needs of the tooth.<br><br>.The demarcation between irritation of the pulp leading to productive stimulation of secondary dentin formation and that leading to pulpitis is indistinct.<br><br><strong>Clinical Note</strong><br>The reaction of the pulp depends not only on the degree of irritation but also on the individual makeup and resistance of the pulp tissue to injury. In one case, a slight degree of irritation produces a symptomless productive reaction of the pulp, in another it produces hyperemia, and in still another, acute pulpitis may result."
                 },
                 "sub_categories": [
-                    "Predentin Layer",
-                    "Odontoblastic Zone",
-                    "Incremental Lines",
-                    "Dentinal Tubules",
-                    "Primary Dentin",
-                    "Secondary Dentin",
-                    "Tertiary Dentin"
+                    "Reversible Pulpitis",
+                    "Irreversible Pulpitis"
                 ]
             },
-            "Cell Free Zone": {
+            "Pulp Necrosis": {
                 "card_content": {
-                    "title": "Zone of Pulp: Cell Free Zone",
-                    "content": "The cell-free zone, or zone of Weil, is a relatively acellular zone of the pulp, located centrally to the odontoblast zone. This zone, although called cell-free, contains some fibroblasts, mesenchymal cells, and macrophages. Fibroblasts are involved in the production and maintenance of the reticular fibers found in this zone. When odontoblasts are destroyed by noxious stimuli, mesenchymal cells and fibroblasts differentiate into new odontoblasts. Macrophages are present for the phagocytosis of debris. The main constituents of this zone are a plexus of capillaries, the nerve plexus of Raschkow, and the ground substance. The capillary plexus is involved in the nutrition of the odontoblasts and the cells of the zone and is conspicuous only during periods of dentinogenesis and inflammation. The ground substance is involved in the metabolic exchanges of the cells and limits the spread of infection because of its consistency. The zone of Weil is more prominent in the coronal pulp, but it may be completely absent during periods of dentinogenesis."
+                    "img": "./assets/Dental_Pulp/Categories/Anatomy_of_Individual_Tooth.jpg",
+                    "title": "Classification: Pulp Necrosis",
+                    "content": "Necrosis is the death of the pulp. It may be partial or total, depending on whether part of or the entire pulp is involved. Necrosis, although a sequel to inflammation, can also occur following a traumatic injury in which the pulp is destroyed before an inflammatory reaction takes place. As a result, an ischemic infarction can develop and may cause a dry gangrenous necrotic pulp."
                 },
                 "sub_categories": []
             },
-            "Cell Rich Zone": {
+            "Pulp Degeneration": {
                 "card_content": {
-                    "title": "Zone of Pulp: Cell Rich Zone",
-                    "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages."
+                    "img": "./assets/Dental_Pulp/Categories/Diseases_of_Dental_Pulp.jpg",
+                    "title": "Classification: Pulp Degeneration",
+                    "content": "Pulp degeneration is generally present in the teeth of older people. It may also be the result of persistent, mild irritation in teeth of younger people, as in calcific degeneration of the pulp. It is not necessarily related to infection or caries, although a cavity or filling may be present in the affected tooth. The early stage of pulp degeneration does not usually cause definite clinical symptoms.<br><br>The tooth is not discolored, and the pulp may react normally to electric and thermal tests. As degeneration of the pulp progresses, the tooth may become discolored, and the pulp will not respond to stimulation. The specific types of pulp degeneration are discussed in the following text."
                 },
                 "sub_categories": [
-                    "Ground Substance",
-                    "Fibroblasts",
-                    "Undifferentiated Mesenchymal Cells",
-                    "Macrophages, Lymphocytes, and Plasma Cells"
-                ]
-            },
-            "Central Zone": {
-                "card_content": {
-                    "title": "Zone of Pulp: Central Zone",
-                    "content": "The central zone or pulp proper contains blood vessels and nerves that are embedded in the pulp matrix together with fibroblasts. From their central location, the blood vessels and the nerves send branches to the periphery of the pulp."
-                },
-                "sub_categories": [
-                    "Blood Vessels of Pulp",
-                    "Lymphatic Drainage",
-                    "Innervation"
-                ]
-            }
-        }
-    },
-
-    "Anomalies of Pulp Cavities": {
-        "card_content": {
-            "title": "Anomalies of Pulp Cavities",
-            "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone. This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
-        },
-        "img": "./assets/concept-dental.jpg",
-        "categories": {
-            "Dens in Dente": {
-                "card_content": {
-                    "title": "Zone of Pulp: Odontoblastic Zone",
-                    "content": "The odontoblasts are specialized cells that generally last the entire life of the tooth. They consist of cell bodies and their cytoplasmic processes. The odontoblastic cell bodies form the odontoblastic zone, whereas the odontoblastic processes are located within the predentin matrix and the dentinal tubules, extending into the dentin. In this odontoblastic zone, capillaries and unmyelinated sensory nerves are found around the odontoblastic cell bodies. The odontoblasts lining the predentin represent the link between the dentin and the pulp. They are the matrix-producing cells and show characteristic features associated with protein synthesis."
-                },
-                "sub_categories": [
-                    "Predentin Layer",
-                    "Odontoblastic Zone",
-                    "Incremental Lines",
-                    "Dentinal Tubules",
-                    "Primary Dentin",
-                    "Secondary Dentin",
-                    "Tertiary Dentin"
-                ]
-            },
-            "Dens Evaginatus": {
-                "card_content": {
-                    "title": "Zone of Pulp: Cell Free Zone",
-                    "content": "The cell-free zone, or zone of Weil, is a relatively acellular zone of the pulp, located centrally to the odontoblast zone. This zone, although called cell-free, contains some fibroblasts, mesenchymal cells, and macrophages. Fibroblasts are involved in the production and maintenance of the reticular fibers found in this zone. When odontoblasts are destroyed by noxious stimuli, mesenchymal cells and fibroblasts differentiate into new odontoblasts. Macrophages are present for the phagocytosis of debris. The main constituents of this zone are a plexus of capillaries, the nerve plexus of Raschkow, and the ground substance. The capillary plexus is involved in the nutrition of the odontoblasts and the cells of the zone and is conspicuous only during periods of dentinogenesis and inflammation. The ground substance is involved in the metabolic exchanges of the cells and limits the spread of infection because of its consistency. The zone of Weil is more prominent in the coronal pulp, but it may be completely absent during periods of dentinogenesis."
-                },
-                "sub_categories": []
-            },
-            "Palatogingival Developmental Groove": {
-                "card_content": {
-                    "title": "Zone of Pulp: Cell Rich Zone",
-                    "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages."
-                },
-                "sub_categories": [
-                    "Ground Substance",
-                    "Fibroblasts",
-                    "Undifferentiated Mesenchymal Cells",
-                    "Macrophages, Lymphocytes, and Plasma Cells"
-                ]
-            },
-            "Taurodontism": {
-                "card_content": {
-                    "title": "Zone of Pulp: Central Zone",
-                    "content": "The central zone or pulp proper contains blood vessels and nerves that are embedded in the pulp matrix together with fibroblasts. From their central location, the blood vessels and the nerves send branches to the periphery of the pulp."
-                },
-                "sub_categories": [
-                    "Blood Vessels of Pulp",
-                    "Lymphatic Drainage",
-                    "Innervation"
+                    "Calcific Degeneration",
+                    "Fibrous Degeneration"
                 ]
             }
         }

@@ -10,7 +10,8 @@
 //   .attr("viewBox", `0 0 ${containerWidth} ${containerHeight}`);
 
 const svg = d3.select("#circle-container");
-const curve = d3.line().curve(d3.curveNatural); // Curve declaration for threads with d3
+// const curve = d3.line().curve(d3.curveNatural); // Curve declaration for threads with d3
+
 
 
 // Loading Animation
@@ -44,8 +45,8 @@ let perY = "50%";
 let firstRadius = 70;
 let secondRadius = firstRadius + 20;
 let secondTextRadius = firstRadius + 60;
-let thirdRadius = secondRadius + 130;
-let thirdTextRadius = secondRadius + 180;
+let thirdRadius = secondRadius + 100;
+let thirdTextRadius = secondRadius + 140;
 
 // Stroke color and width for the second and third circles
 const mainCircleStroke = "rgba(0, 0, 0, .3)";
@@ -74,6 +75,7 @@ let rotateAngle;
 let chosenTopic = "Dental Pulp";
 let chosenTopicList = [];
 let rightTextAngle = -60, leftTextAngle = 60;
+let endTopic = "Zones of Pulp";
 
 
 // .....
@@ -81,7 +83,8 @@ let rightTextAngle = -60, leftTextAngle = 60;
 // .....
 const mediaQuery = [
   window.matchMedia('(max-width: 1300px)'),
-  window.matchMedia('(max-width: 1100px)'),
+  window.matchMedia('(max-width: 1200px)'),
+  window.matchMedia('(max-width: 1023px)'),
   window.matchMedia('(max-width: 950px)'),
   window.matchMedia('(max-width: 800px)'),
 ];
@@ -92,19 +95,24 @@ const handleMediaQuery = (mediaQuery) => {
   }
 
   if (mediaQuery[1].matches) {
-    centerX = 480;
+    centerX = 310;
   }
 
   if (mediaQuery[2].matches) {
-    centerX = 420;
+    centerX = 480;
   }
 
   if (mediaQuery[3].matches) {
+    centerX = 420;
+  }
+
+  if (mediaQuery[4].matches) {
     centerX = 370;
   }
 }
 
 handleMediaQuery(mediaQuery);
+
 // window.onresize = () => {
 //   handleMediaQuery(mediaQuery);
 // }
@@ -164,6 +172,7 @@ const handleInitialization = (topic) => {
   // Inserting div for the center image text foreignObject element 
   document.querySelector(".image-fo").innerHTML = `<div class="image-div"></div>`;
   document.querySelector(".image-div").innerHTML = `<div class="image-content-layer"></div>`;
+  document.querySelector(".image-content-layer").innerHTML = `<p class="image-para"></p>`;
 
   // style for the center div
   document.querySelector(".image-div").style.cssText = `
@@ -187,6 +196,10 @@ const handleInitialization = (topic) => {
     font-weight: 700;
     background-color: rgba(0, 0, 0, .5);
     border-radius: 50%;
+  `;
+
+  document.querySelector(".image-para").style.cssText = `
+    cursor: pointer;
   `;
 
 
@@ -250,6 +263,15 @@ const handleDataFetch = async (topic) => {
       card_content.innerHTML = data[topic].card_content.content;
     });
 
+  // Center div click event
+  document.querySelector(".image-para").addEventListener("click", (e) => {
+    e.preventDefault();
+    card_image.style.backgroundImage = "url(" + fill_image + ")";
+    document.querySelector(".image-div").style.backgroundImage = "url(" + fill_image + ")";
+    card_title.innerText = jsonData[topic].card_content.title;
+    card_content.innerHTML = jsonData[topic].card_content.content;
+  })
+
   handleCircles(topic);
 }
 
@@ -275,7 +297,6 @@ const handleCircles = (topic) => {
     // Appending a g node for circle and text combination  
     contentNode.append("g")
       .attr("class", "node node-" + (i + 1));
-    // .attr("transform", "rotate(" + rotateAngle + ")");
 
     // Appending two g's inside the g node for circle and text
     d3.select(".node-" + (i + 1))
@@ -288,10 +309,10 @@ const handleCircles = (topic) => {
 
     // Appending Circles
     d3.select(".b-" + (i + 1)).append("circle")
-      .attr("class", "c-circle sc")   // c-circle stands for category-circle which represents the categories of the topic && sc for common class name
+      .attr("class", "c-circle sc")       // c-circle stands for category-circle which represents the categories of the topic && sc for common class name
       .attr("cx", x)
       .attr("cy", y)
-      .attr("r", "14px")                  // radius of the stroked circles
+      .attr("r", "13px")                  // radius of the stroked circles
       .attr("fill", backgroundColor)
       .attr("stroke", smallCircleStroke)
       .attr("stroke-width", strokeWidth);
@@ -301,8 +322,8 @@ const handleCircles = (topic) => {
         .attr("class", "content-fo c-fo-" + (i + 1))
         .attr("x", textX - 70)
         .attr("y", textY - 15)
-        .attr("width", "90")
-        .attr("height", "42");
+        .attr("width", "80")
+        .attr("height", "36");
 
       document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text right-align">Macrophages, Lymphocytes, and Plasma Cells</div>`;
     }
@@ -312,21 +333,21 @@ const handleCircles = (topic) => {
         .attr("class", "content-fo c-fo-" + (i + 1))
         .attr("x", textX - 15)
         .attr("y", textY - 15)
-        .attr("width", "90")
-        .attr("height", "42");
+        .attr("width", "80")
+        .attr("height", "36");
 
       document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text"></div>`;
     }
   }
 
-  document.querySelectorAll(".c-text").forEach(div => {
-    div.style.cssText = `
-      font-size: 12px;
-      color: ${textColor};
-      font-weight: 600;
-      cursor: pointer;
-    `
-  })
+  // document.querySelectorAll(".c-text").forEach(div => {
+  //   div.style.cssText = `
+  //     font-size: 10px;
+  //     color: ${textColor};
+  //     font-weight: 600;
+  //     cursor: pointer;
+  //   `
+  // })
 
 
   // .....
@@ -363,7 +384,7 @@ const handleCircles = (topic) => {
       .attr("class", "sc-circle sc")   // sc-circle stands for sub-category-circle which represents the categories of the topic && sc for common class name
       .attr("cx", x)
       .attr("cy", y)
-      .attr("r", "11px")                  // radius of the stroked circles
+      .attr("r", "10px")                  // radius of the stroked circles
       .attr("fill", backgroundColor)
       .attr("stroke", smallCircleStroke)
       .attr("stroke-width", strokeWidth);
@@ -373,8 +394,8 @@ const handleCircles = (topic) => {
         .attr("class", "content-fo c-fo-" + (n + 1))
         .attr("x", textX - 75)
         .attr("y", textY - 5)
-        .attr("width", "90")
-        .attr("height", "36");
+        .attr("width", "80")
+        .attr("height", "20");
 
       document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text right-align"></div>`;
     }
@@ -384,29 +405,29 @@ const handleCircles = (topic) => {
         .attr("class", "content-fo c-fo-" + (n + 1))
         .attr("x", textX - 15)
         .attr("y", textY - 12)
-        .attr("width", "90")
-        .attr("height", "36");
+        .attr("width", "80")
+        .attr("height", "20");
 
       document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text"></div>`;
     }
     n++;
   }
 
-  document.querySelectorAll(".sc-text").forEach(div => {
-    div.style.cssText = `
-      font-family: 'Raleway', sans-serif;
-      font-size: 10px;
-      color: ${textColor};
-      font-weight: 600;
-      cursor: pointer;
-    `;
-  });
+  // document.querySelectorAll(".sc-text").forEach(div => {
+  //   div.style.cssText = `
+  //     font-family: 'Raleway', sans-serif;
+  //     font-size: 8px;
+  //     color: ${textColor};
+  //     font-weight: 600;
+  //     cursor: pointer;
+  //   `;
+  // });
 
-  document.querySelectorAll(".right-align").forEach(div => {
-    div.style.cssText += `
-      text-align: right;
-    `;
-  });
+  // document.querySelectorAll(".right-align").forEach(div => {
+  //   div.style.cssText += `
+  //     text-align: right;
+  //   `;
+  // });
 
   handleDataLoading(topic);
 }
@@ -425,7 +446,7 @@ const handleDataLoading = async (topic) => {
   popupImage.style.backgroundImage = "url(" + fill_image + ")";
 
   // Topic
-  document.querySelector(".image-content-layer").innerText = topic;
+  document.querySelector(".image-para").innerText = topic;
 
   // Categories Circle Div
   document.querySelectorAll(".c-text").forEach((div, i) => {
@@ -463,18 +484,33 @@ const handleSelections = (topic) => {
     for (let j = 0; j < sub_categories_length; j++) {
       for (let k = 0; k < sc_highlight_list.length; k++) {
         if (sc_text_list[j].innerText == sc_highlight_list[k]) {
-          let point1 = [category_points[i], sub_category_points[j]];
-          threadsNode.append('path')
+          // let point1 = [category_points[i][0], sub_category_points[j][1]];
+          let curveData = [{ x: category_points[i][0], y: category_points[i][1] }, { x: sub_category_points[j][0], y: sub_category_points[j][1] }];
+          let diagonal = d3.svg.diagonal()
+            .source(function (d) { return { x: d[0].y, y: d[0].x }; })
+            .target(function (d) { return { x: d[1].y, y: d[1].x }; })
+            .projection(function (d) { return [d.y, d.x]; });
+
+          threadsNode.append('g')
+            .datum(curveData)
+            .append('path')
             .attr("class", "thread thread-" + (i + 1))
-            .attr("d", curve(point1))
+            .attr('d', diagonal)
             .attr("stroke", "#0000001F")
             .attr("stroke-width", "1")
             .attr("fill", "none");
+
+          // threadsNode.append('path')
+          //   .attr("class", "thread thread-" + (i + 1))
+          //   .attr("d", curve(point1))
+          //   .attr("stroke", "#0000001F")
+          //   .attr("stroke-width", "1")
+          //   .attr("fill", "none");
+
         }
       }
     }
   }
-
 
   // .....
   // Click handler function for circles and text
@@ -502,11 +538,11 @@ const handleSelections = (topic) => {
       // highlight Circles
       c_circles_list[index].classList.add("highlight");
       c_text_list[index].classList.add("highlight");
-      
+
       // Change Card Content
       card_title.innerText = title;
       card_content.innerHTML = content;
-      
+
       // read more button -- reverse property
       readBtn.innerText = "Read More";
       card_content.classList.remove("expanded-content");
@@ -515,14 +551,13 @@ const handleSelections = (topic) => {
       document.querySelector(".image-div").style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
       card_image.style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
       popupImage.style.backgroundImage = "url(" + jsonData[topic].categories[c_text_list[index].innerText].card_content.img + ")";
-      
+
 
       sub_highlight_contents = jsonData[topic].categories[c_text_list[index].innerText].sub_categories;
 
       for (let j = 0; j < sc_text_list.length; j++) {
         for (let k = 0; k < sub_highlight_contents.length; k++) {
           if (sc_text_list[j].innerHTML == sub_highlight_contents[k]) {
-            sc_text_list[j].classList.add("highlight");
             sc_circles_list[j].classList.add("highlight");
             specificThreadElements[k].classList.add("highlight-thread");
           }
@@ -533,17 +568,28 @@ const handleSelections = (topic) => {
     // For Sub Categories Circles
     else {
 
-      chosenTopicList.push(chosenTopic);
-      chosenTopic = sc_text_list[index].innerText;
-
-      handleLoadingAnimation(animationContainer);
-      setTimeout(() => {
-        document.querySelector("#circle-container").innerHTML = "";
-        handleInitialization(chosenTopic);
+      if (chosenTopic === endTopic) {
+        sc_circles_list[index].classList.add("highlight");
         readBtn.innerText = "Read More";
         card_content.classList.remove("expanded-content");
-        handleNavHistory();
-      }, 2000);
+
+        card_title.innerText = jsonData[topic].sub_categories[sc_text_list[index].innerText].card_content.title;
+        card_content.innerHTML = jsonData[topic].sub_categories[sc_text_list[index].innerText].card_content.content;
+      }
+
+      else {
+        chosenTopicList.push(chosenTopic);
+        chosenTopic = sc_text_list[index].innerText;
+
+        handleLoadingAnimation(animationContainer);
+        setTimeout(() => {
+          document.querySelector("#circle-container").innerHTML = "";
+          handleInitialization(chosenTopic);
+          readBtn.innerText = "Read More";
+          card_content.classList.remove("expanded-content");
+          handleNavHistory();
+        }, 2000);
+      }
     }
   }
 
@@ -594,10 +640,10 @@ readBtn.addEventListener("click", (e) => {
 // .....
 const handleNavHistory = () => {
   ulList.innerHTML = "";
-
-  chosenTopicList.forEach(li => {
-    ulList.innerHTML += `<li>${li}</li>`;
-  });
+  chosenTopicList.slice().reverse()
+    .forEach(li => {
+      ulList.innerHTML += `<li>${li}</li>`;
+    });
 
   const listItem = document.querySelectorAll(".history-list li");
   listItem.forEach(item => {
@@ -622,12 +668,13 @@ const handleNavHistory = () => {
   })
 }
 
+
+
 navBtn.addEventListener("click", (e) => {
   e.preventDefault();
   dropDown.classList.toggle("drop-show");
   navBtn.classList.toggle("drop-focus");
 });
-
 
 card_image.addEventListener("click", (e) => {
   e.preventDefault();

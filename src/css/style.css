@@ -54,7 +54,7 @@ header ul li {
 }
 .grid-container .map {
   position: sticky;
-  top: 90px;
+  top: 97px;
   height: calc(100vh - 6rem);
   width: 100%;
   display: flex;
@@ -65,7 +65,7 @@ header ul li {
   z-index: 11111;
   position: absolute;
   top: 2%;
-  left: 5%;
+  left: 2%;
 }
 .grid-container .map .history-nav .nav-btn {
   border-radius: 50px;
@@ -236,8 +236,25 @@ header ul li {
   transition: stroke-width 0.3s, transform 0.3s, fill 0.3s;
   transform-origin: 50% 50%;
 }
-.grid-container .map #circle-container text {
+.grid-container .map #circle-container .c-text {
+  font-size: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
   cursor: pointer;
+}
+.grid-container .map #circle-container .sc-text {
+  font-size: 8px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  cursor: pointer;
+}
+.grid-container .map #circle-container .right-align {
+  text-align: right !important;
+}
+.grid-container .map #circle-container .content-fo {
+  overflow: visible;
+  transition: opacity 500ms ease;
+  transform-origin: 0px 0px;
 }
 .grid-container .map #circle-container .sc:hover {
   stroke: black;
@@ -248,6 +265,7 @@ header ul li {
 .grid-container .map #circle-container .highlight {
   fill: black;
 }
+.grid-container .map #circle-container .thread:hover,
 .grid-container .map #circle-container .highlight-thread {
   stroke: rgba(0, 0, 0, 0.4352941176);
 }
@@ -313,12 +331,14 @@ header ul li {
   margin-bottom: 1rem;
 }
 .grid-container .content .card .card-body-content p {
-  color: #777;
+  display: grid;
+  color: #444;
   font-size: 0.9rem;
   margin-bottom: 1rem;
   line-height: 150%;
   max-height: 70px;
   overflow: hidden;
+  transition: max-height 0.3s ease 0s;
 }
 .grid-container .content .card .card-body-content span {
   display: inline-block;
@@ -329,7 +349,7 @@ header ul li {
   cursor: pointer;
 }
 .grid-container .content .card .card-body-content .expanded-content {
-  max-height: none;
+  max-height: initial;
 }
 .grid-container .content .card .card-body-content .icons {
   display: flex;
@@ -354,6 +374,12 @@ header ul li {
   font-weight: 500;
 }
 
+.image-center {
+  width: 70%;
+  height: 100%;
+  justify-self: center;
+}
+
 footer {
   padding-bottom: 2rem;
   padding-top: 0.25rem;
@@ -369,7 +395,13 @@ footer h2 {
     left: 310px;
   }
 }
-@media screen and (max-width: 1100px) {
+@media (max-width: 1200px) {
+  .grid-container .map .animation-container {
+    top: 290px;
+    left: 280px;
+  }
+}
+@media screen and (max-width: 1023px) {
   .grid-container {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr;
