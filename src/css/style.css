@@ -3,10 +3,38 @@
   font-family: "Raleway", sans-serif;
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: subpixel-antialiased;
+  backface-visibility: hidden;
 }
 
 body {
   background-color: #f2f2f2;
+}
+
+.pointer {
+  cursor: pointer !important;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.right-align {
+  transform-origin: center right !important;
+  text-align: right !important;
+}
+
+.highlight-circle {
+  fill: black !important;
+}
+
+.popup-show {
+  overflow: hidden !important;
+}
+
+.thread:hover,
+.highlight-thread {
+  stroke: rgba(0, 0, 0, 0.4352941176) !important;
 }
 
 header {
@@ -39,18 +67,11 @@ header ul li {
   cursor: pointer;
 }
 
-.hidden {
-  display: none !important;
-}
-
-.popup-show {
-  overflow: hidden;
-}
-
 .grid-container {
   display: grid;
   grid-template-columns: 60% 40%;
   margin: 0.75rem 0;
+  transition: all 0.5s ease;
 }
 .grid-container .map {
   position: sticky;
@@ -70,7 +91,6 @@ header ul li {
 .grid-container .map .history-nav .nav-btn {
   border-radius: 50px;
   padding: 0.75rem 1.2rem;
-  cursor: pointer;
   width: 115px;
   display: flex;
   align-items: center;
@@ -154,8 +174,8 @@ header ul li {
   width: 60px;
   height: 60px;
   position: absolute;
-  top: 290px;
-  left: 420px;
+  top: 45%;
+  left: 46.5%;
   margin: auto;
 }
 @keyframes rotate {
@@ -227,52 +247,155 @@ header ul li {
     box-shadow: 0 -18px 0 0 #ffe386, 12.727926px -12.727926px 0 0 #ffe386, 18px 0 0 -5px rgba(152, 128, 255, 0), 12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), 0 18px 0 -5px rgba(152, 128, 255, 0), -12.727926px 12.727926px 0 -5px rgba(152, 128, 255, 0), -18px 0 0 -5px rgba(152, 128, 255, 0), -12.727926px -12.727926px 0 0 #10beae;
   }
 }
-.grid-container .map #circle-container {
-  height: 600px;
-  width: 100%;
+.grid-container .map .panel-effect-animation {
+  left: 48%;
 }
-.grid-container .map #circle-container .sc {
-  cursor: pointer;
-  transition: stroke-width 0.3s, transform 0.3s, fill 0.3s;
+@keyframes thread-connect {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+.grid-container .map #circle-container {
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+.grid-container .map #circle-container .top-g-node {
+  transition: transform 0.5s ease;
+}
+.grid-container .map #circle-container .center-image-div {
+  height: 100%;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: center center;
+  transition: transform 0.75s cubic-bezier(0.125, 1.085, 0.325, 1.08) 0.3s, opacity 0.75s ease 0.3s;
+}
+.grid-container .map #circle-container .center-image-matte {
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 700;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+.grid-container .map #circle-container .stroke-circle {
+  stroke: rgba(0, 0, 0, 0.4352941176);
+  stroke-width: 2px;
+  fill: none;
+  transition: all 0.5s ease;
+}
+.grid-container .map #circle-container .node {
+  transition: all 0.5s ease;
+}
+.grid-container .map #circle-container .bounce {
+  transition: transform 0.375s ease, fill 300ms ease;
+  transform: scale(1);
+}
+.grid-container .map #circle-container .bounce:hover {
+  transform: scale(1.1);
+  transition: transform 0.375s cubic-bezier(0.095, 2, 0.555, 1.475), fill 300ms ease;
+}
+.grid-container .map #circle-container .small-circle {
+  fill: #f2f2f2;
+  stroke: rgba(0, 0, 0, 0.7);
+  stroke-width: 1.5px;
+  opacity: 0;
+  transition: transform 0.3s ease, fill 0.5s ease, opacity 0.6s ease 0.2s;
   transform-origin: 50% 50%;
 }
-.grid-container .map #circle-container .c-text {
-  font-size: 10px;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
-  cursor: pointer;
-}
-.grid-container .map #circle-container .sc-text {
-  font-size: 8px;
-  color: rgb(0, 0, 0);
-  font-weight: 600;
-  cursor: pointer;
-}
-.grid-container .map #circle-container .right-align {
-  text-align: right !important;
-}
-.grid-container .map #circle-container .content-fo {
-  overflow: visible;
-  transition: opacity 500ms ease;
-  transform-origin: 0px 0px;
-}
-.grid-container .map #circle-container .sc:hover {
-  stroke: black;
-  stroke-width: 6;
+.grid-container .map #circle-container .small-circle:hover {
   transform: scale(1);
   fill: black;
 }
-.grid-container .map #circle-container .highlight {
-  fill: black;
+.grid-container .map #circle-container .content-fo {
+  overflow: visible;
 }
-.grid-container .map #circle-container .thread:hover,
-.grid-container .map #circle-container .highlight-thread {
-  stroke: rgba(0, 0, 0, 0.4352941176);
+.grid-container .map #circle-container .c-text {
+  font-size: 12px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.5s cubic-bezier(0.125, 1.085, 0.325, 1.08) 0.5s, opacity 0.5s ease 0.5s;
+}
+.grid-container .map #circle-container .sc-text {
+  font-size: 10px;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  opacity: 0;
+  transform: scale(0);
+  transform-origin: top left;
+  transition: transform 0.5s cubic-bezier(0.125, 1.085, 0.325, 1.08) 0.5s, opacity 0.5s ease 0.5s;
+}
+.grid-container .map #circle-container .thread {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+}
+.grid-container .map #circle-container .view {
+  opacity: 1;
+  transform: scale(1);
+}
+.grid-container .map #circle-container .view-circle {
+  opacity: 1;
+}
+.grid-container .map #circle-container .view-thread {
+  opacity: 1;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: thread-connect 3s linear forwards;
 }
 .grid-container .content {
   display: flex;
   width: 100%;
   padding: 1rem;
+  overflow: hidden;
+}
+.grid-container .content .hide-panel {
+  position: absolute;
+  bottom: 3%;
+  right: 40%;
+  border-radius: 50px;
+  padding: 0.75rem 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: right;
+  transition: background-color 0.3s ease, right 0.5s ease;
+  width: 143px;
+}
+.grid-container .content .hide-panel span {
+  margin-right: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  text-wrap: nowrap;
+}
+.grid-container .content .hide-panel i {
+  transition: transform 0.3s ease;
+}
+.grid-container .content .hide-panel .panel-effect-icon {
+  transform: rotate(-180deg);
+}
+.grid-container .content .panel-effect-button {
+  overflow: hidden;
+  right: 2%;
+  width: 10px;
+  transition: width 0.3s ease, right 0.5s ease;
+}
+.grid-container .content .panel-effect-button:hover {
+  width: 148px;
+}
+.grid-container .content .hide-panel:hover {
+  background-color: white;
 }
 .grid-container .content .popup-layer {
   background-color: rgba(0, 0, 0, 0.5);
@@ -295,6 +418,9 @@ header ul li {
   border-radius: 0.5rem;
   background-color: #fff;
   box-shadow: 0px 0px 2px 1px rgba(200, 199, 199, 0.5);
+  position: relative;
+  left: 0px;
+  transition: left 0.5s ease;
 }
 .grid-container .content .card .card-head-content {
   background-position: center center;
@@ -373,6 +499,13 @@ header ul li {
   color: #888;
   font-weight: 500;
 }
+.grid-container .content .hide-card {
+  left: 800px;
+}
+
+.panel-effect-grid {
+  grid-template-columns: 97% 0%;
+}
 
 .image-center {
   width: 70%;
@@ -390,15 +523,12 @@ footer h2 {
   color: #333;
 }
 
-@media (max-width: 1300px) {
-  .grid-container .map .animation-container {
-    left: 310px;
+@media (max-width: 1100px) {
+  .grid-container .map #circle-container .c-text {
+    font-size: 11px;
   }
-}
-@media (max-width: 1200px) {
-  .grid-container .map .animation-container {
-    top: 290px;
-    left: 280px;
+  .grid-container .map #circle-container .sc-text {
+    font-size: 8px;
   }
 }
 @media screen and (max-width: 1023px) {
@@ -418,23 +548,22 @@ footer h2 {
     z-index: inherit;
   }
   .grid-container .map .animation-container {
-    left: 450px;
-    top: 365px;
+    top: 53%;
   }
   .grid-container .map #circle-container {
     width: 100%;
+    height: 650px;
+  }
+  .grid-container .map #circle-container .c-text {
+    font-size: 13px;
+  }
+  .grid-container .map #circle-container .sc-text {
+    font-size: 10px;
   }
   .grid-container .content {
     grid-row-start: 2;
   }
-}
-@media screen and (max-width: 950px) {
-  .grid-container .map .animation-container {
-    left: 390px;
-  }
-}
-@media screen and (max-width: 800px) {
-  .grid-container .map .animation-container {
-    left: 340px;
+  .grid-container .content .hide-panel {
+    display: none;
   }
 }

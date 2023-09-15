@@ -1,13 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=https://alchinavaneeth.github.io/strategic_concept_map/src/index.html">
-    <title>Document</title>
+    <title>Strategic Concept Mapping</title>
+    <link rel="stylesheet" href="./src/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.12/d3.js"></script>
 </head>
+
 <body>
-    <!-- <div style="height: 100vh; width: 100vw; background-color: blue;">
-    </div>   -->
+
+    <header>
+        <h2>Strategic Concept Map</h2>
+        <!-- <a href="./demo">Demo</a> -->
+        <ul>
+            <li>Home</li>
+            <li>Search</li>
+            <li>About</li>
+        </ul>
+    </header>
+
+    <div class="grid-container">
+
+        <!-- Strategic Map -->
+        <div class="map">
+            <div class="animation-container hidden">
+                <div class="dot-spin"></div>
+                <!-- <div class="load"></div> -->
+            </div>
+
+            <div class="history-nav">
+                <div class="nav-btn pointer">
+                    <span>History</span>
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="drop-down">
+                    <ul class="history-list">
+                    </ul>
+                </div>
+            </div>
+
+            <svg id="circle-container">
+            </svg>
+        </div>
+
+        <!-- Map Content - Card -->
+        <div class="content">
+            <div class="hide-panel pointer">
+                <span class="hide-panel-text">Hide Panel</span>
+                <i class="fa fa-arrow-right hide-icon"></i>
+            </div>
+            <div class="popup-layer hidden">
+                <div class="popup-image"></div>
+            </div>
+            <div class="card">
+                <div class="card-head-content">
+                    <div class="black-layer">
+                    </div>
+                </div>
+                <div class="card-body-content">
+                    <h4></h4>
+                    <p></p>
+                    <span class="read-more">Read More</span>
+                    <div class="icons">
+                        <div class="icon">
+                            <i class="fa-solid fa-share-from-square"></i>
+                            <span>Share</span>
+                        </div>
+                        <div class="icon">
+                            <i class="fa-solid fa-code"></i>
+                            <span>Embed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <h2>Developed by Alchi</h2>
+    </footer>
+
+    <script type="module" src="./src/js/script.js"></script>
 </body>
+
 </html>

@@ -1,10 +1,16 @@
-$textColor: rgba(0, 0, 0, 1);
+$textColor: rgba(0, 0, 0);
+$holderCircleStroke: #0000006f;
+$smallCircleStroke: rgba(0, 0, 0, .7);
+$strokeWidth: 2px;
+$backgroundColor: #f2f2f2;
 
 * {
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
     margin: 0;
     padding: 0;
+    -webkit-font-smoothing: subpixel-antialiased;
+    backface-visibility: hidden;
 }
 
 body {
@@ -12,6 +18,32 @@ body {
 }
 
 
+// Global styles
+.pointer {
+    cursor: pointer !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.right-align {
+    transform-origin: center right !important;
+    text-align: right !important;
+}
+
+.highlight-circle {
+    fill: black !important;
+}
+
+.popup-show {
+    overflow: hidden !important;
+}
+
+.thread:hover,
+.highlight-thread {
+    stroke: #0000006f !important;
+}
 
 
 header {
@@ -47,27 +79,18 @@ header {
     }
 }
 
-.hidden {
-    display: none !important;
-}
-
-.popup-show {
-    overflow: hidden;
-}
 
 .grid-container {
     display: grid;
-    // grid-template-columns: repeat(12, 1fr);
     grid-template-columns: 60% 40%;
     margin: .75rem 0;
+    transition: all .5s ease;
 
     .map {
-        // grid-column: span 7;
         position: sticky;
         top: 97px;
         height: calc(100vh - 6rem);
         width: 100%;
-        // max-height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -82,7 +105,6 @@ header {
                 // margin-bottom: .5rem;
                 border-radius: 50px;
                 padding: .75rem 1.2rem;
-                cursor: pointer;
                 width: 115px;
                 display: flex;
                 align-items: center;
@@ -188,10 +210,9 @@ header {
             width: 60px;
             height: 60px;
             position: absolute;
-            top: 290px;
-            left: 420px;
+            top: 45%;
+            left: 46.5%;
             margin: auto;
-            // background-color: white;
 
             @keyframes rotate {
                 from {
@@ -286,69 +307,182 @@ header {
             }
         }
 
+        .panel-effect-animation {
+            left: 48%;
+        }
+
+        @keyframes thread-connect {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
         #circle-container {
-            // width: 800px;
-            height: 600px;
+            height: 100%;
             width: 100%;
-            // height: auto;
-            // max-width: 100%;
-            // max-height: 100%;
-            
-            .sc {
-                cursor: pointer;
-                transition: stroke-width .3s, transform .3s, fill .3s;
+            overflow: visible;
+
+            .top-g-node {
+                transition: transform 0.5s ease;
+            }
+
+            .center-image-div {
+                height: 100%;
+                border-radius: 50%;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center center;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: center center;
+                transition: transform .75s cubic-bezier(0.125, 1.085, 0.325, 1.08) .3s, opacity .75s ease .3s;
+            }
+
+            .center-image-matte {
+                width: 100%;
+                height: 100%;
+                padding: .5rem;
+                color: white;
+                font-size: 16px;
+                text-align: center;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-weight: 700;
+                background-color: rgba(0, 0, 0, .5);
+                border-radius: 50%;
+            }
+
+            .stroke-circle {
+                stroke: $holderCircleStroke;
+                stroke-width: $strokeWidth;
+                fill: none;
+                transition: all .5s ease;
+            }
+
+            .node {
+                transition: all .5s ease;
+            }
+
+            .bounce {
+                transition: transform 0.375s ease, fill 300ms ease;
+                transform: scale(1);
+            }
+
+            .bounce:hover {
+                transform: scale(1.1);
+                transition: transform 0.375s cubic-bezier(0.095, 2, 0.555, 1.475), fill 300ms ease;
+            }
+
+            .small-circle {
+                fill: $backgroundColor;
+                stroke: $smallCircleStroke;
+                stroke-width: $strokeWidth - 0.5;
+                opacity: 0;
+                transition: transform .3s ease, fill .5s ease, opacity .6s ease .2s;
                 transform-origin: 50% 50%;
             }
 
-            .c-text {
-                font-size: 10px;
-                color: $textColor;
-                font-weight: 600;
-                cursor: pointer;
-            }
-
-            .sc-text {
-                font-size: 8px;
-                color: $textColor;
-                font-weight: 600;
-                cursor: pointer;
-            }
-
-            .right-align {
-                text-align: right !important;
-            }
-
-            .content-fo {
-                overflow: visible;
-                transition: opacity 500ms ease;
-                transform-origin: 0px 0px;
-            }
-
-            .sc:hover {
-                stroke: black;
-                stroke-width: 6;
+            .small-circle:hover {
                 transform: scale(1);
                 fill: black;
             }
 
-            .highlight {
-                fill: black;
+            .content-fo {
+                overflow: visible;
             }
 
-            .thread:hover,
-            .highlight-thread {
-                stroke: #0000006f;
+            .c-text {
+                font-size: 12px;
+                color: $textColor;
+                font-weight: 600;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: top left;
+                transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+            }
+
+            .sc-text {
+                font-size: 10px;
+                color: $textColor;
+                font-weight: 600;
+                opacity: 0;
+                transform: scale(0);
+                transform-origin: top left;
+                transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+            }
+
+            .thread {
+                transition: opacity .3s ease;
+                opacity: 0;
+            }
+
+            .view {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            .view-circle {
+                opacity: 1;
+            }
+
+            .view-thread {
+                opacity: 1;
+                stroke-dasharray: 700;
+                stroke-dashoffset: 700;
+                animation: thread-connect 3s linear forwards;
             }
         }
     }
 
     .content {
-        // grid-column: 8 / 13;
         display: flex;
         width: 100%;
         padding: 1rem;
-        // align-items: center;
-        // overflow: scroll;
+        overflow: hidden;
+
+        .hide-panel {
+            position: absolute;
+            bottom: 3%;
+            right: 40%;
+            border-radius: 50px;
+            padding: .75rem 1.2rem;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            transition: background-color .3s ease, right .5s ease;
+            width: 143px;
+
+            span {
+                margin-right: 8px;
+                font-size: 16px;
+                font-weight: 500;
+                text-wrap: nowrap;
+            }
+
+            i {
+                transition: transform .3s ease;
+            }
+
+            .panel-effect-icon {
+                transform: rotate(-180deg);
+            }
+        }
+
+        .panel-effect-button {
+            overflow: hidden;
+            right: 2%;
+            width: 10px;
+            transition: width .3s ease, right .5s ease;
+        }
+
+        .panel-effect-button:hover {
+            width: 148px;
+        }
+
+        .hide-panel:hover {
+            background-color: white;
+        }
 
         .popup-layer {
             background-color: rgba(0, 0, 0, .5);
@@ -369,12 +503,13 @@ header {
         }
 
         .card {
-            // margin: 1.5rem;
-            // height: 550px;
             max-height: 100%;
             border-radius: .5rem;
             background-color: #fff;
             box-shadow: 0px 0px 2px 1px rgb(200, 199, 199, .5);
+            position: relative;
+            left: 0px;
+            transition: left .5s ease;
 
             .card-head-content {
                 background-position: center center;
@@ -469,7 +604,16 @@ header {
                 }
             }
         }
+
+        .hide-card {
+            left: 800px;
+            // transition: left .5s ease;
+        }
     }
+}
+
+.panel-effect-grid {
+    grid-template-columns: 97% 0%;
 }
 
 .image-center {
@@ -493,22 +637,18 @@ footer {
 }
 
 
-@media (max-width: 1300px) {
-    .grid-container {
-        .map {
-            .animation-container {
-                left: 310px;
-            }
-        }
-    }
-}
 
-@media (max-width: 1200px) {
+@media (max-width: 1100px) {
     .grid-container {
         .map {
-            .animation-container {
-                top: 290px;
-                left: 280px;
+            #circle-container {
+                .c-text {
+                    font-size: 11px;
+                }
+
+                .sc-text {
+                    font-size: 8px;
+                }
             }
         }
     }
@@ -532,40 +672,30 @@ footer {
             }
 
             .animation-container {
-                left: 450px;
-                top: 365px;
+                top: 53%;
             }
 
             #circle-container {
-                // width: 800px;
-                // height: 600px;
                 width: 100%;
-                // height: 100%;
+                height: 650px;
+
+                .c-text {
+                    font-size: 13px;
+                }
+
+                .sc-text {
+                    font-size: 10px;
+                }
             }
         }
 
         .content {
+
+            .hide-panel {
+                display: none;
+            }
+
             grid-row-start: 2;
-        }
-    }
-}
-
-@media screen and (max-width: 950px) {
-    .grid-container {
-        .map {
-            .animation-container {
-                left: 390px;
-            }
-        }
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .grid-container {
-        .map {
-            .animation-container {
-                left: 340px;
-            }
         }
     }
 }

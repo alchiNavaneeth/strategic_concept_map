@@ -11,6 +11,8 @@ dist/
 Data_classification.md
 reviews.md
 * copy.*
+demo/
+* ref.*
 
 # Compiled Java class files
 *.class

@@ -13,15 +13,16 @@ function watchFiles() {
 
     browserSync.init({
         server: {
-            baseDir: './src'
+            baseDir: './'
         },
         port: 5000
     });
 
     gulp.watch('src/**/*.scss', compileSass).on('change', browserSync.reload);
-    gulp.watch('src/*.html').on('change', browserSync.reload);
+    gulp.watch('./**/*.html').on('change', browserSync.reload);
     gulp.watch('src/**/*.js').on('change', browserSync.reload);
     gulp.watch('src/**/*.json').on('change', browserSync.reload);
+
 }
 
 exports.default = gulp.series(compileSass, watchFiles);
