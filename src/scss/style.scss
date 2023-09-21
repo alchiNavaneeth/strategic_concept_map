@@ -10,7 +10,12 @@ $backgroundColor: #f2f2f2;
     margin: 0;
     padding: 0;
     -webkit-font-smoothing: subpixel-antialiased;
-    backface-visibility: hidden;
+
+    // perspective: 0;
+    // -webkit-perspective: 0;
+    // -webkit-backface-visibility: hidden;
+    // visibility:visible;
+    // backface-visibility: hidden;
 }
 
 body {
@@ -28,7 +33,7 @@ body {
 }
 
 .right-align {
-    transform-origin: center right !important;
+    // transform-origin: center right !important;
     text-align: right !important;
 }
 
@@ -79,7 +84,6 @@ header {
     }
 }
 
-
 .grid-container {
     display: grid;
     grid-template-columns: 60% 40%;
@@ -89,7 +93,7 @@ header {
     .map {
         position: sticky;
         top: 97px;
-        height: calc(100vh - 6rem);
+        height: calc(100vh - 9rem);
         width: 100%;
         display: flex;
         justify-content: center;
@@ -333,9 +337,9 @@ header {
                 background-size: cover;
                 background-position: center center;
                 opacity: 0;
-                transform: scale(0);
-                transform-origin: center center;
-                transition: transform .75s cubic-bezier(0.125, 1.085, 0.325, 1.08) .3s, opacity .75s ease .3s;
+                // transform: scale(0);
+                // transition: transform .75s cubic-bezier(0.125, 1.085, 0.325, 1.08) .3s, opacity .75s ease .3s;
+                transition: opacity .75s ease .3s;
             }
 
             .center-image-matte {
@@ -397,9 +401,10 @@ header {
                 color: $textColor;
                 font-weight: 600;
                 opacity: 0;
-                transform: scale(0);
-                transform-origin: top left;
-                transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+                // transform: scale(0);
+                // transform-origin: top left;
+                // transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+                transition: opacity .5s ease .5s;
             }
 
             .sc-text {
@@ -407,9 +412,10 @@ header {
                 color: $textColor;
                 font-weight: 600;
                 opacity: 0;
-                transform: scale(0);
-                transform-origin: top left;
-                transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+                // transform: scale(0);
+                // transform-origin: top left;
+                // transition: transform .5s cubic-bezier(0.125, 1.085, 0.325, 1.08) .5s, opacity .5s ease .5s;
+                transition: opacity .5s ease .5s;
             }
 
             .thread {
@@ -419,7 +425,7 @@ header {
 
             .view {
                 opacity: 1;
-                transform: scale(1);
+                // transform: scale(1);
             }
 
             .view-circle {
@@ -442,8 +448,8 @@ header {
         overflow: hidden;
 
         .hide-panel {
-            position: absolute;
-            bottom: 3%;
+            position: fixed;
+            bottom: 10%;
             right: 40%;
             border-radius: 50px;
             padding: .75rem 1.2rem;
@@ -562,6 +568,12 @@ header {
                     max-height: 70px;
                     overflow: hidden;
                     transition: max-height 0.3s ease 0s;
+
+                    a {
+                        color: #444;
+                        // font-weight: 500;
+                        font-size: 13px;
+                    }
                 }
 
                 span {
@@ -626,7 +638,7 @@ header {
 
 
 footer {
-    padding-bottom: 2rem;
+    padding-bottom: .75rem;
     padding-top: .25rem;
 
     h2 {

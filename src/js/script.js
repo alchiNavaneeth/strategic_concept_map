@@ -23,11 +23,7 @@ let jsonData;                     // JSON Data
 let category_points = [];         // Small inner circle points list for future use
 let sub_category_points = [];     // Small outer circle points list for future use
 
-// Radii for the circles
-// let firstRadius = 70;
-// let secondRadius = 100;
-// let thirdRadius = 210;
-
+// Radii
 let firstRadius = Math.min(containerWidth, containerHeight) / 8;
 let secondRadius = Math.min(containerWidth, containerHeight) / 6;
 let thirdRadius = Math.min(containerWidth, containerHeight) / 3;
@@ -113,13 +109,16 @@ const handleInitialization = (topic) => {
     .attr("class", "center-image-fo")
     .attr("width", "140")
     .attr("height", "140")
-    .attr("transform", "translate(-70, -70)");
+    .attr("transform", "translate(-70 -70)");
 
 
   // Inserting div for the center image text foreignObject element 
-  document.querySelector(".center-image-fo").innerHTML = `<div class="center-image-div"></div>`;
-  document.querySelector(".center-image-div").innerHTML = `<div class="center-image-matte"></div>`;
-  document.querySelector(".center-image-matte").innerHTML = `<p class="center-image-para pointer"></p>`;
+  document.querySelector(".center-image-fo").innerHTML = `
+  <div class="center-image-div">
+    <div class="center-image-matte">
+      <p class="center-image-para pointer">Sample Text</p>
+    </div>
+  </div>`;
 
   // .....
   // Appending inner and outer g for the circles
@@ -398,7 +397,9 @@ const handleCircles = (topic) => {
       // Appending inner text container
       d3.select(".tc-" + (n + 1)).append("g")
         .attr("class", "inner-text-container itc-" + (n + 1))
-        .attr("transform", "translate(20)");
+        .attr("transform", "translate(20)")
+        // .attr("x", "0")
+        // .attr("y", "-16");
 
       // Appending inner inner text
       d3.select(".itc-" + (n + 1)).append("g")
@@ -589,7 +590,6 @@ const handleSelections = (topic) => {
       specificThreadElements = document.querySelectorAll(".thread-" + (index + 1));
       title = jsonData[topic].categories[c_text_list[index].innerText].card_content.title;
       content = jsonData[topic].categories[c_text_list[index].innerText].card_content.content;
-
       // highlight Circles
       c_circles_list[index].classList.add("highlight-circle");
 
