@@ -30,13 +30,18 @@
                     "Maxillary Lateral Incisor",
                     "Maxillary Canine",
                     "Maxillary First Premolar",
+                    "Maxillary Second Premolar",
+                    "Maxillary First Molar",
+                    "Maxillary Second Molar",
                     "Maxillary Third Molar",
                     "Mandibular Central Incisor",
                     "Mandibular Lateral Incisor",
                     "Mandibular Canine",
                     "Mandibular First Premolar",
                     "Mandibular Second Premolar",
-                    "Mandibular First Molar"
+                    "Mandibular First Molar",
+                    "Mandibular Second Molar",
+                    "Mandibular Third Molar"
                 ]
             },
             "Diseases of the Dental Pulp": {
@@ -88,7 +93,7 @@
                 },
                 "sub_categories": [
                     "Predentin Layer",
-                    "Odontoblastic Process",
+                    "Odontoblastic Processes",
                     "Incremental Lines",
                     "Dentinal Tubules",
                     "Primary Dentin",
@@ -108,7 +113,7 @@
                 "card_content": {
                     "img": "./src/assets/Zones_of_Pulp/Categories/Banner/Cell_Rich_Zone.png",
                     "title": "Zone of Pulp: Cell Rich Zone",
-                    "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages."
+                    "content": "The cell-rich zone is located central to the cell-free zone. Its main components are ground substance, fibroblasts with their product, i.e., the collagen fibers, undifferentiated mesenchymal cells, and macrophages.<br><br><img class='image-center' src='./src/assets/Zones_of_Pulp/Categories/Cell_Rich_Zone.png' alt='Image-1'>"
                 },
                 "sub_categories": [
                     "Ground Substance",
@@ -156,7 +161,7 @@
                 "card_content": {
                     "img": "./src/assets/Zones_of_Pulp/Sub_Categories/Banner/Dentinal_Tubules.png",
                     "title": "Odontoblastic Zone: Dentinal Tubules",
-                    "content": "The dentinal tubules extend from the predentin border to the dentinoenamel and the dentinocemental junctions. They are conical in shape, with a 2.5 μm mean diameter in the pulpal wall and a 0.9 μm mean diameter in the dentinoenamel or dentinocemental junctions because of the deposition of the peritubular dentin.<img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_1.jpg' alt='Image-1'> As the dentinal tubules approach the dentinoenamel junction, they branch and increase the ratio per unit area over that of the middle third of the dentin. The branching of the dentinal tubules occurs during the beginning of dentinogenesis. Each preodontoblast sends various cytoplasmic processes into the acellular zone and thereby produces several future dentinal tubules. As the fully mature odontoblast migrates pulpally, the processes unite to form a single dentinal tubule with terminal branches at the dentinoenamel junction. This branching may explain the extreme sensitivity of the Dentinoenamel junction. Because the peritubular dentin has an organic matrix with fewer collagen fibers than the intertubular dentin, it is more mineralized and harder. As the pulp ages, the continuous deposition of peritubular dentin may obliterate the dentinal tubules peripherally. This obliteration of tubules results in the formation of the sclerotic dentin, which has a glassy appearance under transmitted light.<img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_2.jpg' alt='Image-1'>"
+                    "content": "The dentinal tubules extend from the predentin border to the dentinoenamel and the dentinocemental junctions. They are conical in shape, with a 2.5 μm mean diameter in the pulpal wall and a 0.9 μm mean diameter in the dentinoenamel or dentinocemental junctions because of the deposition of the peritubular dentin.<img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_1.jpg' alt='Image-1'> As the dentinal tubules approach the dentinoenamel junction, they branch and increase the ratio per unit area over that of the middle third of the dentin. The branching of the dentinal tubules occurs during the beginning of dentinogenesis. Each preodontoblast sends various cytoplasmic processes into the acellular zone and thereby produces several future dentinal tubules.<br><br>As the fully mature odontoblast migrates pulpally, the processes unite to form a single dentinal tubule with terminal branches at the dentinoenamel junction. This branching may explain the extreme sensitivity of the Dentinoenamel junction. Because the peritubular dentin has an organic matrix with fewer collagen fibers than the intertubular dentin, it is more mineralized and harder.<br><br>As the pulp ages, the continuous deposition of peritubular dentin may obliterate the dentinal tubules peripherally. This obliteration of tubules results in the formation of the sclerotic dentin, which has a glassy appearance under transmitted light.<img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Dentinal_Tubules_2.jpg' alt='Image-1'>"
                 }
             },
             "Primary Dentin": {
@@ -226,7 +231,7 @@
                 "card_content": {
                     "img": "./src/assets/Zones_of_Pulp/Sub_Categories/Banner/Innervation.png",
                     "title": "Central Zone: Innervation",
-                    "content": "The sensory mechanism of the pulp is composed of sensory afferent and autonomic efferent systems.<br><ul><li>The afferent system conducts impulses perceived by the pulp from a variety of stimuli to the cortex of the brain, where they are interpreted as pain, regardless of the stimulus<strong>(Box 1.1).</strong></li><br><li>The efferent motor pathway in the dental pulp consists of sympathetic fibers from the cervical ganglion that enter through the apical foramina in the outer layer of the arterioles, the tunica adventitia. The sympathetic nerves provide vasomotor control to circulation and therefore regulate the blood flow and intrapulpal blood pressure in response to stimuli. Approximately 80% of the nerves of the pulp are <strong>C fibers</strong> and the rest are <strong>Aδ fibers (Table 1.1).</strong></li></ul><br><img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_1.jpg' alt='Image-1'><br><br><img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_2.jpg' alt='Image-1'><br>Distribution of intradental A- and C-fibers. Unmyelinated C-fibers are located in the pulp proper, whereas myelinated A-fibers are extensively distributed in the pulp dentin border, penetrating the inner part of dentin.<br><br><strong>Citations</strong>Närhi M. The neurophysiology of the teeth. Dent Clin North Am. 1990;34(3):439-448."
+                    "content": "The sensory mechanism of the pulp is composed of sensory afferent and autonomic efferent systems.<br><ul><li>The afferent system conducts impulses perceived by the pulp from a variety of stimuli to the cortex of the brain, where they are interpreted as pain, regardless of the stimulus.</li><br><li>The efferent motor pathway in the dental pulp consists of sympathetic fibers from the cervical ganglion that enter through the apical foramina in the outer layer of the arterioles, the tunica adventitia. The sympathetic nerves provide vasomotor control to circulation and therefore regulate the blood flow and intrapulpal blood pressure in response to stimuli. Approximately 80% of the nerves of the pulp are <strong>C fibers</strong> and the rest are <strong>Aδ fibers (Table 1.1).</strong></li></ul><br><img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_1.jpg' alt='Image-1'><br><br><img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Innervation_of_Pulp_2.jpg' alt='Image-1'><br>Distribution of intradental A- and C-fibers. Unmyelinated C-fibers are located in the pulp proper, whereas myelinated A-fibers are extensively distributed in the pulp dentin border, penetrating the inner part of dentin.<br><br><strong>Citations</strong>Närhi M. The neurophysiology of the teeth. Dent Clin North Am. 1990;34(3):439-448."
                 }
             }
         }
