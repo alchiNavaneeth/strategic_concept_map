@@ -50,6 +50,7 @@ let c_circles_list;
 let sc_circles_list;
 let sc_text_list;
 let c_text_list;
+let content_fo_list;
 
 
 let chosenTopic = "Dental Pulp";
@@ -114,11 +115,11 @@ const handleInitialization = (topic) => {
 
   // Inserting div for the center image text foreignObject element 
   document.querySelector(".center-image-fo").innerHTML = `
-  <div class="center-image-div">
-    <div class="center-image-matte">
-      <p class="center-image-para pointer">Sample Text</p>
-    </div>
-  </div>`;
+    <div class="center-image-div">
+      <div class="center-image-matte">
+        <p class="center-image-para pointer"></p>
+      </div>
+    </div>`;
 
   // .....
   // Appending inner and outer g for the circles
@@ -222,7 +223,7 @@ const handleCircles = (topic) => {
       // Appending inner text container
       d3.select(".tc-" + (i + 1)).append("g")
         .attr("class", "inner-text-container itc-" + (i + 1))
-        .attr("transform", "translate(20)");
+        .attr("transform", "translate(5)");
 
       // Appending inner inner text
       d3.select(".itc-" + (i + 1)).append("g")
@@ -233,13 +234,13 @@ const handleCircles = (topic) => {
       // Appending foreignObject
       d3.select(".iit-" + (i + 1)).append("foreignObject")
         .attr("class", "content-fo c-fo-" + (i + 1))
-        .attr("width", "90")
+        .attr("width", "70")
         .attr("height", "20")
         .attr("transform", "translate(45) rotate(180) translate(-45)")
         .attr("x", "0")
         .attr("y", "-16");
 
-      document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text pointer right-align">Sample Content</div>`;
+      document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text pointer right-align"></div>`;
     }
 
     else {
@@ -275,7 +276,7 @@ const handleCircles = (topic) => {
       // Appending inner text container
       d3.select(".tc-" + (i + 1)).append("g")
         .attr("class", "inner-text-container itc-" + (i + 1))
-        .attr("transform", "translate(20)");
+        .attr("transform", "translate(22)");
 
       // Appending inner inner text
       d3.select(".itc-" + (i + 1)).append("g")
@@ -286,12 +287,12 @@ const handleCircles = (topic) => {
       // Appending foreignObject
       d3.select(".iit-" + (i + 1)).append("foreignObject")
         .attr("class", "content-fo c-fo-" + (i + 1))
-        .attr("width", "90")
+        .attr("width", "80")
         .attr("height", "20")
         .attr("x", "0")
         .attr("y", "-16");
 
-      document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text pointer">Sample Content</div>`;
+      document.querySelector(".c-fo-" + (i + 1)).innerHTML = `<div class="c-text pointer"></div>`;
     }
   }
 
@@ -363,7 +364,7 @@ const handleCircles = (topic) => {
         .attr("x", "0")
         .attr("y", "-10");
 
-      document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text pointer right-align">Sample Content</div>`;
+      document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text pointer right-align"></div>`;
     }
 
     else {
@@ -398,8 +399,8 @@ const handleCircles = (topic) => {
       d3.select(".tc-" + (n + 1)).append("g")
         .attr("class", "inner-text-container itc-" + (n + 1))
         .attr("transform", "translate(20)")
-        // .attr("x", "0")
-        // .attr("y", "-16");
+      // .attr("x", "0")
+      // .attr("y", "-16");
 
       // Appending inner inner text
       d3.select(".itc-" + (n + 1)).append("g")
@@ -415,7 +416,7 @@ const handleCircles = (topic) => {
         .attr("x", "0")
         .attr("y", "-10");
 
-      document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text pointer">Sample Content</div>`;
+      document.querySelector(".c-fo-" + (n + 1)).innerHTML = `<div class="sc-text pointer"></div>`;
     }
     n++;
   }
@@ -514,6 +515,7 @@ const handleSelections = (topic) => {
   sc_circles_list = document.querySelectorAll(".sc-circle");
   sc_text_list = document.querySelectorAll(".sc-text");
   c_text_list = document.querySelectorAll(".c-text");
+  content_fo_list = document.querySelectorAll(".content-fo");
   const allCirclesList = [c_circles_list, c_text_list, sc_circles_list, sc_text_list];
 
 
@@ -728,6 +730,12 @@ const updateCentering = (topic) => {
       d3.select(".node-" + (i + 1))
         .attr("transform", `translate(${x} ${y}) rotate(-64)`);
     }
+
+    d3.select(content_fo_list[i])
+      .attr("height", c_text_list[i].clientHeight)
+      .attr("y", - c_text_list[i].clientHeight / 2);
+
+    // console.log(c_text_list[i].clientHeight);
   }
 
   // .....
@@ -745,6 +753,10 @@ const updateCentering = (topic) => {
 
     d3.select(".node-" + (n + 1))
       .attr("transform", `translate(${x} ${y}) rotate(${angleDegrees})`);
+
+    d3.select(content_fo_list[n])
+      .attr("height", sc_text_list[i].clientHeight)
+      .attr("y", - sc_text_list[i].clientHeight / 2);
 
     n++;
   }
