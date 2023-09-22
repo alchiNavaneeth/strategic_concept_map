@@ -143,7 +143,7 @@
                     "content": "Dentinogenesis includes the production, deposition, and calcification of the matrix. This matrix is the predentin layer deposited around the odontoblastic processes and is found between the calcified dentin and the odontoblastic zone.<br> <img class='image-center' src='./src/assets/Zones_of_Pulp/Sub_Categories/Predentin_Layer.jpg' alt='Image-1'> <br>This predentin layer, elaborated by the odontoblasts, is a protein-carbohydrate complex consisting of proteoglycans, phosphoproteins, plasma proteins, glycoproteins, and collagen fibrils. Calcium and phosphorus salts are deposited into this matrix to produce the mineralized structure known as dentin. The pattern of calcification around the odontoblastic processes forms the dentinal tubules, and the dentin between these tubules is called intertubular dentin."
                 }
             },
-            "Odontoblastic Process": {
+            "Odontoblastic Processes": {
                 "card_content": {
                     "img": "./src/assets/Zones_of_Pulp/Sub_Categories/Banner/Odontoblastic_Process.png",
                     "title": "Odontoblastic Zone: Odontoblastic Process",

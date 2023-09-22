@@ -223,7 +223,7 @@ const handleCircles = (topic) => {
       // Appending inner text container
       d3.select(".tc-" + (i + 1)).append("g")
         .attr("class", "inner-text-container itc-" + (i + 1))
-        .attr("transform", "translate(5)");
+        .attr("transform", "translate(2)");
 
       // Appending inner inner text
       d3.select(".itc-" + (i + 1)).append("g")
