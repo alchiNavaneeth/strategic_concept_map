@@ -17,6 +17,7 @@ let categories_length;            // Total Categories list
 let sub_categories_length;        // Total Sub Categories list
 let categories = [];              // Categories list
 let sub_categories;               // Sub Categories list
+// let shuffled_sub_categories;      // Shuffled Sub Categories list
 let fill_image;                   // Center Image
 let fill_image_card;              // Card Image
 let jsonData;                     // JSON Data
@@ -53,6 +54,7 @@ let c_text_list;
 let content_fo_list;
 
 
+// let chosenTopic = "Zones of Pulp";
 let chosenTopic = "Dental Pulp";
 let chosenTopicList = [];
 let endTopic = "Zones of Pulp";
@@ -61,6 +63,24 @@ let endTopic = "Zones of Pulp";
 // ........
 // Algorithm Initiation
 // ........
+
+
+// .....
+// Shuffle Sub Categories
+// .....
+const shuffle = (array) => {
+  for (var i = array.length - 1; i > 0; i--) {
+
+    var j = Math.floor(Math.random() * (i + 1));
+
+    var temp = array[i];
+    array[i] = array[j];
+    array[j] = temp;
+  }
+
+  return array;
+}
+
 
 // Loading Animation
 const handleLoadingAnimation = (animationContainer) => {
@@ -431,6 +451,9 @@ const handleCircles = (topic) => {
 // .....
 const handleDataLoading = (topic) => {
 
+  // shuffled_sub_categories = shuffle(sub_categories);
+  // shuffle(sub_categories);
+
   // Card Image
   card_image.style.backgroundImage = "url(" + fill_image + ")";
 
@@ -461,6 +484,10 @@ const handleDataLoading = (topic) => {
       document.querySelector(".center-image-div").classList.add("view");
     }, 100);
 
+    setTimeout(() => {
+      document.querySelector(".inner-circle").classList.add("view");
+    }, 250);
+
     // Categories circle
     setTimeout(() => {
       document.querySelectorAll(".c-circle").forEach(item => {
@@ -481,6 +508,10 @@ const handleDataLoading = (topic) => {
         item.classList.add("view-thread");
       });
     }, 1000);
+
+    setTimeout(() => {
+      document.querySelector(".outer-circle").classList.add("view");
+    }, 1100);
 
     // Sub-category circle
     setTimeout(() => {
@@ -623,7 +654,8 @@ const handleSelections = (topic) => {
     // For Sub Categories Circles
     else {
 
-      if (chosenTopic === endTopic) {
+      // if (chosenTopic === endTopic) {
+      if (!Object.keys(jsonData).includes(sc_text_list[index].innerText)) {
         sc_circles_list[index].classList.add("highlight-circle");
         readBtn.innerText = "Read More";
         card_content.classList.remove("expanded-content");

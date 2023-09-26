@@ -328,6 +328,9 @@ header {
 
             .top-g-node {
                 transition: transform 0.5s ease;
+                -webkit-transition: transform 0.5s ease;
+                -moz-transition: transform 0.5s ease;
+                -o-transition: transform 0.5s ease;
             }
 
             .center-image-div {
@@ -340,6 +343,19 @@ header {
                 // transform: scale(0);
                 // transition: transform .75s cubic-bezier(0.125, 1.085, 0.325, 1.08) .3s, opacity .75s ease .3s;
                 transition: opacity .75s ease .3s;
+                -webkit-transition: opacity .75s ease .3s;
+                -moz-transition: opacity .75s ease .3s;
+                -o-transition: opacity .75s ease .3s;
+            }
+
+            .inner-circle {
+                opacity: 0;
+                transition: opacity .5s ease;
+            }
+
+            .outer-circle {
+                opacity: 0;
+                transition: opacity .5s ease;
             }
 
             .center-image-matte {
@@ -362,10 +378,16 @@ header {
                 stroke-width: $strokeWidth;
                 fill: none;
                 transition: all .5s ease;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -o-transition: all .5s ease;
             }
 
             .node {
                 transition: all .5s ease;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -o-transition: all .5s ease;
             }
 
             .bounce {
@@ -509,6 +531,7 @@ header {
         }
 
         .card {
+            width: 100%;
             max-height: 100%;
             border-radius: .5rem;
             background-color: #fff;
@@ -565,9 +588,9 @@ header {
                     font-size: .9rem;
                     margin-bottom: 1rem;
                     line-height: 150%;
-                    max-height: 70px;
+                    max-height: 60px;
                     overflow: hidden;
-                    transition: max-height 0.3s ease 0s;
+                    transition: max-height .5s ease 0s;
 
                     a {
                         color: #444;
@@ -582,7 +605,7 @@ header {
                     color: #333;
                     margin-bottom: 2rem;
                     font-weight: 600;
-                    cursor: pointer;
+                    // cursor: pointer;
                 }
 
                 .expanded-content {
@@ -668,12 +691,15 @@ footer {
 
 @media screen and (max-width: 1023px) {
     .grid-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+
+        display: flex;
+        flex-direction: column;
+        // grid-template-columns: 1fr;
+        // grid-template-rows: 1fr 1fr;
         height: auto;
 
         .map {
-            grid-row-start: 1;
+            // grid-row-start: 1;
             position: static;
             top: 0;
             height: auto;
@@ -702,12 +728,15 @@ footer {
         }
 
         .content {
+            // grid-row-start: 2;
 
             .hide-panel {
                 display: none;
             }
 
-            grid-row-start: 2;
+            .hide-card {
+                left: 0;
+            }
         }
     }
 }
