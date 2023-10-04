@@ -17,7 +17,6 @@ let categories_length;            // Total Categories list
 let sub_categories_length;        // Total Sub Categories list
 let categories = [];              // Categories list
 let sub_categories;               // Sub Categories list
-// let shuffled_sub_categories;      // Shuffled Sub Categories list
 let fill_image;                   // Center Image
 let fill_image_card;              // Card Image
 let jsonData;                     // JSON Data
@@ -53,8 +52,6 @@ let sc_text_list;
 let c_text_list;
 let content_fo_list;
 
-
-// let chosenTopic = "Zones of Pulp";
 let chosenTopic = "Dental Pulp";
 let chosenTopicList = [];
 let endTopic = "Zones of Pulp";
@@ -590,6 +587,9 @@ const handleSelections = (topic) => {
     card_title.innerText = jsonData[topic].card_content.title;
     card_content.innerHTML = jsonData[topic].card_content.content;
 
+    readBtn.innerText = "Read More";
+    card_content.classList.remove("expanded-content");
+
     const threadElements = document.querySelectorAll(".thread");
 
     for (let i = 0; i < c_circles_list.length; i++) {
@@ -932,6 +932,12 @@ window.addEventListener('resize', () => {
 // Hide Panel event listener
 hidePanelButton.addEventListener("click", e => {
   e.preventDefault();
+
+  // .....
+  // Read More effect
+  readBtn.innerText = "Read More";
+  card_content.classList.remove("expanded-content");
+
 
   // .....
   // Effect on card
